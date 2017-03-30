@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+   <head>
+       <meta charset="utf-8">
+       <meta name="viewport" content="minimal-ui=yes,width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+       <style>
+           .wrap{
+            overflow:hidden;
+            margin-left:5px;
+           }
+       </style>
+   </head>
+   <body style="height: 100%; margin: 0">
+       <div class="wrap">
+           <div style="float:left;height:25px;line-height:25px">功能:</div>
+           <select style="float:left;margin-left:10px;height:25px"  onchange="aaa(this.value)">
+              <option value="1">Saab</option>
+              <option value="2">Opel</option>
+              <option value="3">Audi</option>
+            </select>
+       </div> 
+       <div id="container" style="height: 100%"></div>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+       <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+       <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+       <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js">
+       </script>
+       <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+option = null;
+$.when(
+   
+).done(function () {
+
+    
+
+    myChart.hideLoading();
+
+
+
+    option = {
+    	baseOption: {
+        title : {
+	        text: '当月情况',
+	        subtext: ''
+    	},
+	    tooltip : {
+	        trigger: 'axis'
+	    },
+    legend: {
+        data : ['小区','城市','省','全国']
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            data : ['Jan','Feb','Mar','Apr','May','June','July','Aug','Sept','Oct','Nov','Dec'],
+            axisLabel:{
+            	interval:0
+            }
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            name:'分数',
+            max:120,
+            min:0,
+            splitNumber:6,
+            axisLabel : {
+                show:true,
+                formatter: function (value) {
+                    switch(value)
+                    {
+                        case 120:
+                        return "A";
+                            break;
+                        case 100:
+                        return "B";
+                            break;
+                        case 80:
+                        return "C";
+                            break;
+                        case 60:
+                        return "D";
+                            break;
+                        case 40:
+                        return "E";
+                            break;
+                        case 20:
+                        return "F";
+                            break;
+                        case 0:
+                        return "G";
+                            break;
+                    }          
+                }
+            },
+            splitLine : {
+                show: false
+            }
+        }
+    ],
+    series : [
+         {
+            name:'小区',
+            type:'line',
+            data:[11, 11, 15, 13, 12, 13, 10,20,12,15,18], 
+        },
+        {
+            name:'城市',
+            type:'line',
+            data:[10, 20, 2, 5, 3, 2, 14,0,14,17,11],    
+        },
+        {
+            name:'省',
+            type:'line',
+            data:[11, 20, 25, 15, 23, 2, 12,17,15,18,15],    
+        },
+        {
+            name:'全国',
+            type:'line',
+            data:[14, 25, 22, 35],    
+        }
+    ]
+},
+        media: [
+            {
+                option: {
+                    legend: {
+                        x: 'center', // 'center' | 'left' | {number},
+                        top: '4%',
+                        orient: 'horizontal',
+                    },
+                    grid:{
+                        width:'88%'
+                    }
+                }
+            },
+            {
+                query: {
+                    maxWidth:330
+                },
+                option: {
+                    legend: {
+                        x: 'center', // 'center' | 'left' | {number},
+                        top: '6%',
+                        orient: 'horizontal',
+                    },
+                    grid:{
+                        x:18,
+                        y:60,
+                        x2:10,
+                        y2:50,
+                        width:'93%'
+                    }
+                }
+            }
+        ]
+  };
+
+
+
+    myChart.setOption(option);
+
+});;
+if (option && typeof option === "object") {
+    myChart.setOption(option, true);
+}
+
+
+function aaa(value){
+    if(value==1){
+        alert(1);
+    }
+}
+       </script>
+   </body>
+</html>
