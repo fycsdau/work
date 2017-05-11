@@ -1,0 +1,64 @@
+<div class="bjui-pageContent">
+  <form action="__URL__/edit/navTabId/org" class="pageForm" data-toggle="validate">
+    <input type="hidden" name="id" value="{$id}"><input type="hidden" name="type" value="{$type}">
+    <div class="pageFormContent" data-layout-h="0">
+      <table class="table table-condensed table-hover" width="100%">
+        <tbody>
+          <tr>
+            <td>
+              <label for="j_name" class="control-label x85">所属部门：</label>
+              <select name="pid" data-toggle="selectpicker" data-rule="required">
+                <option  value="0">顶级</option>
+                <foreach name="list" item="v">
+                  <option <if condition="$v.id EQ $Rs['pid'] ">selected value="{$Rs['pid']}" <else/>value="{$v.id}"</if> >
+                    <switch name="v.level">
+                      <case value="0"></case> 
+                      <case value="1">　</case>
+                      <case value="2">　　</case>
+                      <case value="3">　　　</case>
+                      <default />
+                    </switch>
+                    {$v.title}
+                  </option>
+                </foreach>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="j_title" class="control-label x85">
+                中心名称：
+              </label>
+              <input type="text" data-rule="required" size="30" name="title" id="j_title" value="{$Rs['title']}" >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="address" class="control-label x85">地址：</label>
+              <input type="text" size="30" name="address" id="address" value="{$Rs['address']}" >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="tel" class="control-label x85">电话：</label>
+              <input type="text" size="30" name="tel" id="tel" value="{$Rs['tel']}" >
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="j_sort" class="control-label x85">排序：</label>
+              <input type="text"  size="5" data-toggle="spinner" data-min="0" data-max="100" data-step="1" data-rule="integer" name="sort" id="j_sort" value="{$Rs['sort']}" >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+  </form>
+</div>
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+  </ul>
+</div>

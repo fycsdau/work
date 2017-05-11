@@ -1,0 +1,62 @@
+<div class="bjui-pageHeader" style="padding:10px 10px;">
+  <label>微信支付参数配置</label>
+    <div class="pull-right">
+      <span >
+      微信支付|商户平台: <a href="https://pay.weixin.qq.com/index.php/home/login?return_url=%2Findex.php" target="_blank">pay.weixin.qq.com</a>
+      </span>
+    </div>
+</div>
+
+<div class="bjui-pageContent">
+  <form action="__URL__/savecongfig/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+    <input type="hidden" name="id" value="{$id}">
+    <div class="pageFormContent" data-layout-h="0">
+      <table class="table table-condensed table-hover" width="100%">
+        <tbody>
+          <tr>
+            <td align="right" width="200">
+              <label for='mch_id' class='control-label x185'>mch_id(微信支付商户号):</label>
+            </td>
+            <td>
+              <input type='text' id='mch_id' name='mch_id' data-rule='required;' size='20' value="{$config.mch_id}" >
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              请在微信支付审核通过后的通知邮件中查看
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='key' class='control-label x185'>key(API密钥):</label>
+            </td>
+            <td>
+              <input type='text' id='key' name='key' data-rule='required;' size='20' value="{$config.key}">
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              微信商户平台 - 账户设置 - API安全 - 密钥设置
+            </td>
+          </tr>
+          
+          <tr>
+            <td></td>
+            <td>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </form>
+</div>
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+  </ul>
+</div>

@@ -1,0 +1,684 @@
+html {
+  font-family: sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul, ol, menu {
+  list-style: none;
+}
+
+body {
+  font-size: 1em;
+  line-height: 1.5;
+  word-wrap: break-word;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-touch-callout: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+address, em, i {
+  font-style: normal;
+}
+
+input, select, button {
+  vertical-align: middle;
+}
+
+input, select, button, textarea {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Hiragino Sans GB", "STHeiti", "Microsoft Yahei", Helvetica;
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch;
+  font-size: .9rem;
+  color: #333;
+}
+
+section {
+  margin-bottom: .6rem;
+}
+
+h1 {
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+mark {
+  background: transparent;
+  color: #ea6928;
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 99;
+  height: 3rem;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+}
+header .icon-func {
+  display: block;
+  position: relative;
+  color: #ea6928;
+  font-size: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
+}
+header .txt-func {
+  color: #ea6928;
+  line-height: 3rem;
+  padding: 0 1rem;
+}
+header.home-header {
+  display: -webkit-box;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+}
+header.home-header .main {
+  -webkit-box-flex: 1;
+}
+header.home-header .header-logo {
+  display: block;
+  position: relative;
+  min-width: 3rem;
+  height: 100%;
+  padding: 0.5rem;
+}
+header.home-header .header-logo img {
+  max-width: 100%;
+  max-height: 100%;
+}
+header.home-header .header-search-form input {
+  margin: 0;
+  font-size: 0.9rem;
+}
+header.home-header .shopex-input-clear ~ .shopex-icon-clear {
+  top: .12rem;
+  padding: 0;
+}
+header.page-header .header-left {
+  position: relative;
+  float: left;
+  width: 3rem;
+  height: 3rem;
+  color: #666;
+  font-size: 1.5rem;
+  z-index: 99;
+}
+header.page-header .header-right {
+  position: relative;
+  float: right;
+  color: #ea6928;
+  font-size: 1.1rem;
+  padding:10px 10px 0px 0px;
+  z-index: 99;
+}
+header.page-header .header-title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 3rem;
+  line-height: 3rem;
+  text-align: center;
+  font-size: 1.2rem;
+  z-index: 9;
+}
+header.page-header .txt-func {
+  font-size: 1.1rem;
+}
+.container {
+  padding-top: 3rem;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 0;
+}
+.container section:first-child {
+  margin-top: .6rem;
+}
+.section-box-white {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  background: #fff;
+}
+.section-box {
+  display: -webkit-box;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+}
+.section-box-item {
+  -webkit-box-flex: 1;
+}
+.section-title {
+  padding: .5rem 1.5rem;
+  color: #666;
+}
+.section-tips {
+  font-size: .8rem;
+  color: #666;
+  padding: 1rem;
+}
+.section-padded {
+  padding: 1rem;
+}
+.btn-block {
+  margin: 0 !important;
+}
+.form-key {
+  width: 6.5rem;
+  color: #999;
+}
+.navigation {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.navigation .nav-group {
+  display: -webkit-box;
+  height: 3.6rem;
+  -webkit-box-align: center;
+  -webkit-box-pack: center;
+  border-top: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.95);
+}
+.navigation .nav-group a {
+  display: block;
+  -webkit-box-flex: 1;
+  text-align: center;
+  color: #666;
+  line-height: 1.2;
+}
+.navigation .nav-group .active {
+  color: #29bc67;
+}
+.navigation .nav-group .active span {
+  color: #29bc67;
+}
+.navigation [class^="user-icon-"] {
+  display: block;
+  height: 2.1rem;
+  line-height: 2.1rem;
+  font-size: 1.6rem;
+}
+.navigation span {
+  font-size: 0.9rem;
+}
+.has-footer {
+  padding-bottom: 3.5rem;
+}
+
+/* index */
+.mb-list {
+  display: -webkit-box;
+  padding: 0 .5rem;
+}
+.mb-list .mb-list-item {
+  -webkit-box-flex: 1;
+  width: 33.33%;
+  text-align: center;
+  border-radius: .3rem;
+  padding: .3rem;
+}
+.mb-list .mb-list-item span {
+  display: block;
+  padding: 1rem 0;
+  background: #fff;
+  border-radius: .3rem;
+  border: 1px solid #fff;
+}
+.mb-list .mb-list-item.active span {
+  position: relative;
+  border-color: #79b1ff;
+  color: #79b1ff;
+}
+.mb-list .mb-list-item.active span:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 1.2rem solid #79b1ff;
+  border-left: 1.2rem solid transparent;
+  content: "";
+}
+.mb-list .mb-list-item.active span:before {
+  position: absolute;
+  right: -.1rem;
+  bottom: 0;
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  content: "\e900";
+  color: #fff;
+  z-index: 9
+}
+.price-item {
+  padding-right: 1rem;
+}
+.price-item .price-info {
+  font-size: 1rem;
+}
+.price-item .price-info span {
+  color: #ff0000;
+  font-size: 1.4rem;
+}
+.price-item .other-info {
+  color: #999;
+  font-size: .8rem;
+}
+.price-item .other-info span {
+  padding-right: .8rem;
+}
+.pay-item {
+  width: 7rem;
+}
+.bind-phone-number {
+  font-size: 1rem;
+  padding-left: .5rem;
+}
+.phone-number {
+  font-size: 1.6rem;
+}
+.phone-number-info {
+  color: #999;
+  font-size: .8rem;
+}
+.pay-box {
+  margin-top: 3rem;
+}
+.num-history {
+  display: block;
+  width: 2.4rem;
+  color: #79b1ff;
+  font-size: 2.4rem;
+  height: auto;
+}
+/* index end */
+
+/* cards */
+.cards-list [class^="user-icon-"] {
+  font-size: 3rem;
+  margin-right: .8rem;
+}
+.cards-list .cards-account-name {
+  font-size: 1.1rem;
+}
+.cards-list .cards-account-info {
+  color: #999;
+}
+.bank-logo-gongshang {
+  color: #c4131a;
+}
+.bank-logo-nongye {
+  color: #319c8b;
+}
+.bank-logo-jianshe {
+  color: #0066b3;
+}
+.bank-logo-zhongguo {
+  color: #a71e32;
+}
+.add_card{
+  border-radius: 5px;
+  border: 1px solid #e6e6e6;
+  margin: 10px 10px;
+  padding: 10px 20px;
+  color: #afafaf;
+  text-align: center;
+}
+.add_card a{
+  color: #afafaf;
+}
+.add_card i{
+  display: block;
+  font-size: 5rem;
+  height: 80px;
+  margin: -30px 0px 10px 0px;
+}
+/* cards end */
+
+/* pay */
+.pay-amount-key {
+  color: #999;
+  font-size: 1.1rem;
+}
+.pay-amount-key i {
+  font-size: 1.7rem;
+  vertical-align: middle;
+}
+.pay-amount {
+  text-align: right;
+  color: #666;
+}
+.pay-amount span {
+  color: #e23a3a;
+  font-size: 1.5rem;
+}
+.pay-type-list {
+  font-size: 1rem;
+}
+.pay-type-list i {
+  vertical-align: middle;
+  font-size: 2rem;
+  margin-right: .6rem;
+}
+.pay-type-weixin {
+  color: #44b549;
+}
+.pay-type-zhifubao {
+  color: #00aaee;
+}
+.pay-type-linqian {
+  color: #f49a97;
+}
+.linqian-balance {
+  text-align: right;
+  font-size: .9rem;
+  color: #666;
+  padding-right: 2rem;
+}
+/* pay end */
+
+/* withdrawal */
+.withdrawal-amount-key {
+  color: #999;
+  font-size: .9rem;
+}
+.withdrawal-amount {
+  text-align: right;
+  color: #666;
+}
+.withdrawal-amount span {
+  color: #e23a3a;
+  font-size: 1.3rem;
+}
+/* withdrawal end */
+
+/* record */
+.record-price span {
+  font-size: 1.3rem;
+}
+.record-bank {
+  color: #999;
+}
+.record-date {
+  color: #999;
+}
+.record-status {
+  padding: .5rem 0 .1rem 0;
+}
+.record-status.success {
+  color: #4cd964;
+}
+.record-status, .record-date {
+  text-align: right;
+}
+/* record end */
+
+/* help */
+.mui-collapse-content {
+  color: #999;
+}
+/* help end */
+
+/* show */
+html, body {
+  height: 100%;
+}
+.container {
+  height: 100%;
+}
+.show {
+  height: 100%;
+  background: url('../images/bg.jpg') no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.show-qrcode {
+  padding: 1rem 3rem .3rem 3rem;
+}
+.show-qrcode img {
+  width: 100%;
+}
+.show-info {
+  padding: .5rem 0;
+  text-align: center;
+}
+.show-avatar {
+  display: inline-block;
+  width: 3.6rem;
+  height: 3.6rem;
+  margin-right: .5rem;
+  vertical-align: middle;
+}
+.show-avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+.show-name {
+  display: inline-block;
+  font-size: .9rem;
+  text-align: left;
+  vertical-align: middle;
+}
+.show-name span {
+  font-size: 1.1rem;
+}
+.show-modal {
+  position: absolute;
+  background: rgba(0,0,0,.6);
+  width: 83%;
+  border-radius: .5rem;
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  margin-top: -1.5rem;
+}
+.show-tips {
+  padding: 2rem 0 .5rem 0;
+  letter-spacing: -1.5px;
+}
+/* show end */
+
+/* orders */
+.orders .mui-card {
+  margin-bottom: .6rem;
+}
+.orders-item-header {
+  margin-left: -.8rem;
+  margin-right: -.8rem;
+  padding-left: .7rem;
+  padding-right: .7rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px solid #efefef;
+}
+.orders-item-header {
+  font-size: .8rem;
+}
+.orders-date {
+  text-align: right;
+  color: #999;
+}
+.orders-logo {
+  width: 4rem;
+  padding-left: .3rem;
+}
+.orders-logo i {
+  font-size: 2.8rem;
+}
+.orders-info {
+  padding-top: .6rem;
+}
+.orders-info-txt {
+  font-size: .85rem;
+  color: #999;
+}
+.orders-info span {
+  color: #333;
+}
+.brand-yidong {
+  color: #0085d0;
+}
+.brand-liantong {
+  color: #db121c;
+}
+.brand-dianxin {
+  color: #0461a5
+}
+/* orders end */
+
+/* friends */
+.friends li {
+  font-size: 1.1rem;
+  color: #666;
+}
+.friends .ispay {
+  width: 2rem;
+  font-size: 1.8rem;
+  color: #ccc;
+}
+.friends .ispay.haspay {
+  color: #29bc67;
+}
+.friends-avatar {
+  display: inline-block;
+  width: 3.2rem;
+  height: 3.2rem;
+  vertical-align: middle;
+  margin-right: .8rem;
+}
+.friends-avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+/* friends end */
+
+/* member */
+.member {
+  margin-top: 0 !important;
+  padding-bottom: .5rem;
+}
+.member-info {
+  position: relative;
+  padding: 1.3rem 0 0 1.5rem;
+}
+.member-info .member-name {
+  font-size: 1.2rem;
+  padding-bottom: .3rem;
+}
+.member-header {
+  background: url('../images/bg_s.jpg') no-repeat;
+  background-size: cover;
+  height: 9rem;
+  position: relative;
+  color: #fff;
+}
+.member-avatar {
+  width: 4.8rem;
+  height: 4.8rem;
+  position: absolute;
+  right: 1.4rem;
+  bottom: -1rem;
+  z-index: 9;
+}
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.member-header .mask {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.3);
+}
+.member-options i {
+  display: inline-block;
+  width: 2.5rem;
+  vertical-align: middle;
+  margin-left: .5rem;
+  color: #999;
+}
+.member-options .user-icon-pinpaituan {
+  font-size: 1.6rem;
+}
+.member-options .user-icon-gerenxinxi {
+  font-size: 1.5rem;
+}
+.member-options .user-icon-dingdan {
+  font-size: 1.5rem;
+}
+.member-options .user-icon-zhichishuaqia {
+  font-size: 1.1rem;
+}
+.member-options .user-icon-dianzipingzheng {
+  font-size: 1.7rem;
+}
+/* member end */
+
+/* spokes */
+.spokes-num {
+  font-size: .8rem;
+  padding-right: 1.6rem;
+}
+/* spokes end */
+
+/* phonelist */
+.phone-list li span {
+  padding-left: 1rem;
+  color: #ccc;
+}
+/* phonelist end */

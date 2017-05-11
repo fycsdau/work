@@ -1,0 +1,136 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/index.php/Dealerships/" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <!--内容显示-->
+    <div class="am-container">
+        <div class="am-g am-padding">
+            <article class="am-article">
+                <div class="am-article-hd">
+                    <h3 class="am-article-title" style="text-align:center;">{$Rs.title}</h3>
+                </div>
+
+                <div class="am-article-bd">
+
+                    <div class="am-list-news-bd ">
+                        <ul class="am-list am-list-static am-list-border am-list-striped">
+                            <if condition="$show_action eq 1">
+                                <li class="am-g">
+                                    <strong>业主姓名: </strong>
+                                    {$Rs.person}
+                                </li>
+                            </if>
+                            <li class="am-g">
+                                <strong>网点地址: </strong><br>
+                                <span id="address">
+                                    {$Rs.addres}
+                                    <if condition="$showmaplink eq 1">
+                                       (地图查看)
+                                   </if>
+                               </span>
+                           </li>
+                           <li class="am-g">
+                            <strong>固定电话: </strong>
+                            <a href="tel:{$list.tel}">{$Rs.tel}</a>
+                        </li>
+                        <li class="am-g">
+                            <strong>手机号码: </strong>
+                            <a href="tel:{$list.phone}">{$Rs.phone}</a>
+                        </li>
+                        <li class="am-g">
+                            <strong>网点简介: </strong><br>
+                            {$Rs.content}
+                        </li>
+                        <if condition="$show_action eq 1">
+                            <li class="am-g">
+                                <strong>资质/授权文件: </strong>
+                                <php>
+                                    $imgs = explode(", ",$Rs['picfile']);
+                                    for($x=0; $x<count($imgs); $x++) {
+                                    echo '<img src="'. $imgs[$x] .'" class="am-radius am-img-responsive">';
+                                }</php>
+                            </li>
+                        </if>
+                        <li class="am-g">
+                            <strong>认证状态: </strong>
+                            {$Rs['status'] ? "<font color='green'>已认证</font>":"<font color='red'>等待审核</font>"}
+                        </li>
+                        <if condition="$Rs.status eq 1">
+                            <li class="am-g">
+                                <strong>认证时间: </strong>
+                                {$Rs.verifdate}
+                            </li>
+                        </if>
+                    </ul>
+                </div>
+
+                <if condition="$show_action eq 1">
+                    <if condition="$Rs.status eq 1">
+                        <a class="am-btn am-btn-danger am-radius am-btn-block" href="__APP__/Dealerships/verif_update/id/{$Rs.id}/" target="_blank">取消认证</a>
+                        <else />
+                        <a class="am-btn am-btn-success am-radius am-btn-block" href="__APP__/Dealerships/verif_update/id/{$Rs.id}/" target="_blank">通过认证</a>
+                    </if>
+
+                    <!--a class="am-btn am-btn-secondary am-radius am-btn-block" href="__APP__/Dealerships/verif_edit/id/{$Rs.id}/" target="_blank">编辑网点信息</a-->
+                </if>
+
+            </div>
+        </article>
+    </div>
+</div>
+<!--内容显示-->
+
+<include file="Public/foot" />
+
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    wx.config({
+        appId: '{$signPackage.appId}',
+        timestamp: {$signPackage.timestamp},
+        nonceStr: '{$signPackage.nonceStr}',
+        signature: '{$signPackage.signature}',
+        jsApiList: [
+        'checkJsApi',
+        'openLocation',
+        'previewImage'
+        ]
+    });      
+    wx.ready(function () {
+        <if condition="$showmaplink eq 1">
+            $("#address").on("click",function(){
+                wx.openLocation({
+                    latitude: {$lat},
+                    longitude: {$lng},
+                    name: '{$Rs.title}',
+                    address: '{$Rs.addres}',
+                    scale: 28,
+                    infoUrl: ''
+                });
+            })
+        </if>
+
+        $(".am-article-bd img").on("click",function(){
+            var imgnum = $(".am-article-bd img").length;
+            var imgArray = [];
+            var host = window.location.host;
+            var imgn = "http://"+ host +$(this).attr("src");
+            for (var i = 0; i < imgnum; i++) {
+                itemSrc = "http://"+ host +$("img").eq(i).attr("src");
+                imgArray.push(itemSrc);
+            };
+            wx.previewImage({
+                current: imgn,
+                urls: imgArray
+            });
+        })
+    });
+</script>

@@ -1,0 +1,74 @@
+<div class="bjui-pageContent">
+	<form action="__URL__/edit_goods_package/navTabId/goods" class="pageForm" data-toggle="validate">
+    	<input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+            <table class="table table-condensed table-hover" width="100%">
+                <tbody>
+                	<input type="hidden" data-rule="required" size="15" name="package_id" id="package_id" value="{$list['package_id']}">
+                	<tr>
+                        <td>
+                            <label for="j_title" class="control-label x85">供应商:</label>
+                            <select name="supplier_id" id="supplier_id" data-toggle="selectpicker" data-rule="required" disabled="disabled">
+                            	<option value="0" <if condition="$list['supplier_id'] EQ 0 ">selected</if>>阿里大鱼</option>
+                            	<option value="1" <if condition="$list['supplier_id'] EQ 1 ">selected</if>>阿狗大鱼</option>
+                            </select>
+                        </td>
+                    </tr>
+                	<tr>
+                        <td>
+                            <label for="j_title" class="control-label x85">运营商:</label>
+                            <input type="text" data-rule="required" size="15" name="operate_name" id="operate_name" value="{$list['operate_name']}" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="j_title" class="control-label x85">套餐名称:</label>
+                          	<input type="text" data-rule="required" size="15" name="package_name" id="package_name" value="{$list['package_name']}" disabled="disabled">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="j_title" class="control-label x85">套餐code:</label>
+                            <input type="text" data-rule="required" size="25" name="package_code" id="package_code" value="{$list['package_code']}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="j_title" class="control-label x85">市场价:</label>
+                            <input type="text" data-rule="required" size="25" name="market_price" id="market_price" value="{$list['market_price']}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="j_title" class="control-label x85">一级分成:</label>
+                            <input type="text" data-rule="required" size="25" name="one_rate" id="one_rate" value="{$list['one_rate']}">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <label for="j_title" class="control-label x85">二级分成:</label>
+                            <input type="text" data-rule="required" size="25" name="two_rate" id="two_rate" value="{$list['two_rate']}">
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <label for="j_title" class="control-label x85">三级分成:</label>
+                            <input type="text" data-rule="required" size="25" name="three_rate" id="three_rate" value="{$list['three_rate']}">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+		<div class="bjui-pageFooter">
+		    <ul>
+		        <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+		        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+		    </ul>
+		</div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+
+</script>

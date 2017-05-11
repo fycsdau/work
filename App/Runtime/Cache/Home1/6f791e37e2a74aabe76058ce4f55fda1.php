@@ -1,0 +1,27 @@
+<?php if (!defined('THINK_PATH')) exit();?><div class="bjui-pageContent">
+  <div class="pageFormContent" data-layout-h="0">
+    <table class="table table-bordered table-striped table-hover">
+      <tbody>
+        <tr>
+        <td width="15%" align="right"><label>信息标题:</label></td>
+          <td colspan="3"><?php echo ($Rs["title"]); ?></td>
+        </tr>
+        <tr>
+          <td align="right"><label>信息内容:</label></td>
+          <td colspan="3"></td>
+        </tr>
+        <tr>
+          <td colspan="4" style="padding:20px 30px;" class="infocontent">
+            <?php echo (htmlspecialchars_decode($Rs["content"])); ?>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+  </ul>
+</div>

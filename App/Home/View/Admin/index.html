@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$Think.config.WEB_SITE_TITLE}</title>
+    <!-- bootstrap - css -->
+    <link href="__PUBLIC__/BJUI/themes/css/bootstrap.min.css" rel="stylesheet">
+    <!-- core - css -->
+    <link href="__PUBLIC__/BJUI/themes/css/style.css" rel="stylesheet">
+    <link href="__PUBLIC__/BJUI/themes/blue/core.css" id="bjui-link-theme" rel="stylesheet">
+    <!-- plug - css -->
+    <link href="__PUBLIC__/BJUI/plugins/kindeditor_4.1.10/themes/default/default.css" rel="stylesheet">
+    <link href="__PUBLIC__/BJUI/plugins/colorpicker/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="__PUBLIC__/BJUI/plugins/niceValidator/jquery.validator.css" rel="stylesheet">
+    <link href="__PUBLIC__/BJUI/plugins/bootstrapSelect/bootstrap-select.css" rel="stylesheet">
+    <link href="__PUBLIC__/BJUI/themes/css/FA/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lte IE 7]>
+    <link href="__PUBLIC__/BJUI/themes/css/ie7.css" rel="stylesheet">
+    <![endif]-->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lte IE 9]>
+    <script src="__PUBLIC__/BJUI/other/html5shiv.min.js"></script>
+    <script src="__PUBLIC__/BJUI/other/respond.min.js"></script>
+    <![endif]-->
+    <!-- jquery -->
+    <script src="__PUBLIC__/BJUI/js/jquery-1.7.2.min.js"></script>
+    <script src="__PUBLIC__/BJUI/js/jquery.cookie.js"></script>
+    <!--[if lte IE 9]>
+    <script src="__PUBLIC__/BJUI/other/jquery.iframe-transport.js"></script>    
+    <![endif]-->
+    <!-- BJUI.all 分模块压缩版 -->
+    <script src="__PUBLIC__/BJUI/js/bjui-all.js"></script>
+    <!-- plugins -->
+    <!-- swfupload for uploadify && kindeditor -->
+    <script src="__PUBLIC__/BJUI/plugins/swfupload/swfupload.js"></script>
+    <!-- kindeditor -->
+    <script src="__PUBLIC__/BJUI/plugins/kindeditor_4.1.10/kindeditor-all.min.js"></script>
+    <script src="__PUBLIC__/BJUI/plugins/kindeditor_4.1.10/lang/zh_CN.js"></script>
+    <!-- colorpicker -->
+    <script src="__PUBLIC__/BJUI/plugins/colorpicker/js/bootstrap-colorpicker.min.js"></script>
+    <!-- ztree -->
+    <script src="__PUBLIC__/BJUI/plugins/ztree/jquery.ztree.all-3.5.js"></script>
+    <!-- nice validate -->
+    <script src="__PUBLIC__/BJUI/plugins/niceValidator/jquery.validator.js"></script>
+    <script src="__PUBLIC__/BJUI/plugins/niceValidator/jquery.validator.themes.js"></script>
+    <!-- bootstrap plugins -->
+    <script src="__PUBLIC__/BJUI/plugins/bootstrap.min.js"></script>
+    <script src="__PUBLIC__/BJUI/plugins/bootstrapSelect/bootstrap-select.min.js"></script>
+    <!-- icheck -->
+    <script src="__PUBLIC__/BJUI/plugins/icheck/icheck.min.js"></script>
+    <!-- dragsort -->
+    <script src="__PUBLIC__/BJUI/plugins/dragsort/jquery.dragsort-0.5.1.min.js"></script>
+    <!-- HighCharts -->
+    <script src="__PUBLIC__/BJUI/plugins/highcharts/highcharts.js"></script>
+    <script src="__PUBLIC__/BJUI/plugins/highcharts/highcharts-3d.js"></script>
+    <script src="__PUBLIC__/BJUI/plugins/highcharts/themes/gray.js"></script>
+    <!-- ECharts -->
+    <script src="__PUBLIC__/BJUI/plugins/echarts/echarts.js"></script>
+    <!-- other plugins -->
+    <script src="__PUBLIC__/BJUI/plugins/other/jquery.autosize.js"></script>
+    <link href="__PUBLIC__/BJUI/plugins/uploadify/css/uploadify.css" rel="stylesheet">
+    <script src="__PUBLIC__/BJUI/plugins/uploadify/scripts/jquery.uploadify.min.js"></script>
+    
+    <!-- init -->
+    <script type="text/javascript">
+        $(function() {
+            BJUI.init({
+                JSPATH       : '__PUBLIC__/BJUI/',
+                PLUGINPATH   : '__PUBLIC__/BJUI/plugins/',
+                loginInfo    : {url:'login_timeout.html', title:'登录', width:400, height:200},
+                statusCode   : {ok:200, error:300, timeout:301},
+                ajaxTimeout  : 5000,
+                alertTimeout : 3000,
+                pageInfo     : {pageCurrent:'pageCurrent', pageSize:'pageSize', orderField:'orderField', orderDirection:'orderDirection'},
+                keys         : {statusCode:'statusCode', message:'message'},
+                ui           : {
+                    windowWidth      : 0,
+                    showSlidebar     : true,
+                    clientPaging     : true,
+                    overwriteHomeTab : false
+                },
+                debug        : true,
+                theme        : 'sky'
+            })
+            //时钟
+            var today = new Date(), time = today.getTime()
+            $('#bjui-date').html(today.formatDate('yyyy/MM/dd'))
+            setInterval(function() {
+                today = new Date(today.setSeconds(today.getSeconds() + 1))
+                $('#bjui-clock').html(today.formatDate('HH:mm:ss'))
+            }, 1000)
+        })
+
+        // main - menu
+        $('#bjui-accordionmenu')
+        .collapse()
+        .on('hidden.bs.collapse', function(e) {
+            $(this).find('> .panel > .panel-heading').each(function() {
+                var $heading = $(this), $a = $heading.find('> h4 > a')
+
+                if ($a.hasClass('collapsed')) $heading.removeClass('active')
+            })
+        })
+        .on('shown.bs.collapse', function (e) {
+            $(this).find('> .panel > .panel-heading').each(function() {
+                var $heading = $(this), $a = $heading.find('> h4 > a')
+
+                if (!$a.hasClass('collapsed')) $heading.addClass('active')
+            })
+        })
+
+        $(document).on('click', 'ul.menu-items li > a', function(e) {
+            var $a = $(this), $li = $a.parent(), options = $a.data('options').toObj(), $children = $li.find('> .menu-items-children')
+            var onClose = function() {                $li.removeClass('active')            }            var onSwitch = function() {                $('#bjui-accordionmenu').find('ul.menu-items li').removeClass('switch')                $li.addClass('switch')            }
+            $li.addClass('active')            if (options) {                options.url      = $a.attr('href')                options.onClose  = onClose                options.onSwitch = onSwitch                if (!options.title) options.title = $a.text()                    if (!options.target)                        $a.navtab(options)                    else                        $a.dialog(options)                }                if ($children.length) {                    $li.toggleClass('open')                }                e.preventDefault()
+            })
+
+            //菜单-事件
+            function MainMenuClick(event, treeId, treeNode) {
+                if (treeNode.isParent) {
+                    var zTree = $.fn.zTree.getZTreeObj(treeId)
+
+                    zTree.expandNode(treeNode)
+                    return
+                }
+
+                if (treeNode.target && treeNode.target == 'dialog')
+                    $(event.target).dialog({id:treeNode.tabid, url:treeNode.url, title:treeNode.name})
+                else
+                    $(event.target).navtab({id:treeNode.tabid, url:treeNode.url, title:treeNode.name, fresh:treeNode.fresh, external:treeNode.external})
+                event.preventDefault()
+            }
+        </script>
+    </head>
+    <body>
+    <!--[if lte IE 7]>
+    <div id="errorie"><div>您还在使用老掉牙的IE，正常使用系统前请升级您的浏览器到 IE8以上版本 <a target="_blank" href="http://windows.microsoft.com/zh-cn/internet-explorer/ie-8-worldwide-languages">点击升级</a>&nbsp;&nbsp;强烈建议您更改换浏览器：<a href="http://down.tech.sina.com.cn/content/40975.html" target="_blank">谷歌 Chrome</a></div></div>
+    <![endif]-->
+    <div id="bjui-window">
+        <header id="bjui-header">
+            <div class="bjui-navbar-header">
+                <button type="button" class="bjui-navbar-toggle btn-default" data-toggle="collapse" data-target="#bjui-navbar-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="__PUBLIC__/BJUI/themes/css/img/logo.png" height="40" alt="{$Think.config.WEB_SITE_TITLE}">
+                </a>
+            </div>
+            <nav id="bjui-navbar-collapse">
+                <ul class="bjui-navbar-right">
+                    <div class="datetime" style="text-align: right;color: #fff;padding: 0px 0px 10px 10px;">
+                        <div>
+                            <span id="bjui-date"></span> <span id="bjui-clock"></span>
+                        </div>
+                    </div>
+                    <li><a href="{:U('public/online')}" data-toggle="dialog" data-id="online" data-mask="true" data-width="600" data-height="300">在线 <span class="badge"><php>$where['update_time']=array('gt',time()-600);echo M('users')->where($where)->count();</php></span></a></li>
+                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">我的账户 <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{:U('public/changepwd')}" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="400" data-height="260">&nbsp;<span class="glyphicon glyphicon-lock"></span> 修改密码&nbsp;</a></li>
+                            <li><a href="{:U('public/changeinfo')}" data-toggle="dialog" data-id="changepwd_page" data-mask="true" data-width="600" data-height="350">&nbsp;<span class="glyphicon glyphicon-user"></span> 我的资料</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{:U('public/logout')}" class="red">&nbsp;<span class="glyphicon glyphicon-off"></span> 注销登陆</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle theme blue" data-toggle="dropdown" title="切换皮肤"><i class="fa fa-tree"></i></a>
+                        <ul class="dropdown-menu" role="menu" id="bjui-themes">
+                            <li><a href="javascript:;" class="theme_default" data-toggle="theme" data-theme="default">&nbsp;<i class="fa fa-tree"></i> 黑白分明&nbsp;&nbsp;</a></li>
+                            <li><a href="javascript:;" class="theme_orange" data-toggle="theme" data-theme="orange">&nbsp;<i class="fa fa-tree"></i> 橘子红了</a></li>
+                            <li><a href="javascript:;" class="theme_purple" data-toggle="theme" data-theme="purple">&nbsp;<i class="fa fa-tree"></i> 紫罗兰</a></li>
+                            <li class="active"><a href="javascript:;" class="theme_blue" data-toggle="theme" data-theme="blue">&nbsp;<i class="fa fa-tree"></i> 天空蓝</a></li>
+                            <li><a href="javascript:;" class="theme_green" data-toggle="theme" data-theme="green">&nbsp;<i class="fa fa-tree"></i> 绿草如茵</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div id="bjui-container">
+
+            <div id="bjui-leftside" style="height: 100%;">
+                <div id="bjui-sidebar-s" style="height: 100%;">
+                    <div class="collapse"></div>
+                </div>
+                <div id="bjui-sidebar" style="height: 100%;">
+                    <div class="toggleCollapse">
+                        <h2>
+                            <i class="fa fa-bars"></i>                             菜单栏                             <i class="fa fa-bars"></i>                        </h2>                        <a href="javascript:;" class="lock" data-original-title="" title="">                            <i class="fa fa-lock"></i>                        </a>                    </div>                    <div class="panel-group panel-main collapse in" data-toggle="accordion" id="bjui-accordionmenu">                        <include file="Public:leftmenu" />                    </div>                </div>            </div>            <div id="bjui-navtab" class="tabsPage">                <div class="tabsPageHeader">                    <div class="tabsPageHeaderContent">                        <ul class="navtab-tab nav nav-tabs">                            <li><a href="javascript:;"><span><i class="fa fa-home"></i> #maintab#</span></a></li>                        </ul>                    </div>                    <div class="tabsLeft"><i class="fa fa-angle-double-left"></i></div>                    <div class="tabsRight"><i class="fa fa-angle-double-right"></i></div>                    <div class="tabsMore"><i class="fa fa-angle-double-down"></i></div>                </div>                <ul class="tabsMoreList">                    <li><a href="javascript:;">#maintab#</a></li>                </ul>                <div class="navtab-panel tabsPageContent">                    <div class="navtabPage unitBox">                        <div class="bjui-pageContent" style="background:#FFF; padding:20px 0px;">                            <!--数量统计-->                            <div class="col-md-12">                                <div class="panel panel-default">                                    <div style="min-height:170px" class="index_count">                                        <ul>                                            <li class="num fans_yesterday" style="color:#000000;font-size:18px;">{$fans_yesterday}</li>                                            <li>昨日充值笔数</li>                                        </ul>                                        <ul>                                            <li class="num fans_today" style="color:#000000;font-size:18px;">{$fans_today}</li>                                            <li>今日充值笔数</li>                                        </ul>                                        <ul>                                            <li class="num pointv" style="color:#000000;font-size:18px;">{$pointv}</li>                                            <li>昨日新增粉丝</li>                                        </ul>                                        <ul>                                            <li class="num point" style="color:#000000;font-size:18px;">{$point}</li>                                            <li>今日新增粉丝</li>                                        </ul>                                        <ul>                                            <li class="num y_sms" style="color:#000000;font-size:18px;">{$y_sms}</li>                                            <li>昨日发送短信</li>                                        </ul>                                        <ul>                                            <li class="num sms" style="color:#000000;font-size:18px;">{$sms}</li>                                            <li>今日发送短信</li>                                        </ul>                                    </div>                                </div>                            </div>
+                            <!--数量统计-->
+                            <!--待充值序列-->
+                            <div class="col-md-6">                                <div class="panel panel-default">                                    <div class="panel-heading">                                    	 <div class="panel-title" style="display:inline">												<div ><a style="float:right;" href="/admin.php/home/order/index" data-toggle="navtab" data-options="{id:'order'}">订单列表</a></div>                                         </div>                                        <h3 class="panel-title">											待充值序列({$lottery_count})                                        </h3>                                    </div>                                    <div class="panel-body bjui-doc" style="padding:0;">                                        <ul>                                            <volist name="lottery" id="lottery">	                                            <li class="am-g" style="height:30px;">	                                                <div class="am-cf" style="display:inline">													<div style="float:left;width:25%;">{$lottery.order_id}</div>													<div style="float:left;width:25%;">{$lottery.operate_name}</div>													<div style="float:left;width:25%;">{$lottery.package_name}</div>													<div style="float:left;width:25%;">{$lottery.phone}</div>	                                                </div>	                                            </li>                                        	</volist>                                    	</ul>                                	</div>                            </div>
+                        </div>
+                        <!--待充值序列-->
+                        <!--佣金排行榜-->
+                        <div class="col-md-6">                            <div class="panel panel-default">                                <div class="panel-heading">                                    <h3 class="panel-title">										佣金排行榜                                    </h3>                                </div>
+                                <div class="panel-body bjui-doc" style="padding:0;">                                    <ul>										<volist name="commission" id="commission">                                            <li class="am-g" style="height:30px;">                                                <div class="am-cf" style="display:inline">												<div style="float:left;width:20%;">{$commission.user_id}</div>												<div style="float:left;width:35%;">{$commission.nickname}</div>												<div style="float:right;width:35%;">{$commission.commission}元</div>                                                </div>                                            </li>                                        </volist>                                    </ul>                                </div>                            </div>
+                        </div>
+                        <!--佣金排行榜-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer id="bjui-footer" style="text-align:left">
+        您好！{$Think.session.depid|getdepname}  {$Think.session.truename} ({$Think.session.username}) 您的IP:{$Think.session.loginip}   登录时间:{$Think.session.logintime}
+
+        <span style="float:right">{$Think.config.WEB_SITE_TITLE}</span>
+    </footer>
+</div>
+</body>
+</html>

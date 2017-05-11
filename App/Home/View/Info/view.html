@@ -1,0 +1,98 @@
+<div class="bjui-pageContent">
+  <div class="pageFormContent" data-layout-h="0">
+    <table class="table table-bordered table-striped table-hover">
+      <tbody>
+        <tr>
+          <td align="right"><label>信息标题:</label></td>
+          <td colspan="3">{$Rs.title}</td>
+        </tr>
+        <!--开奖信息-->
+        <eq name="Rs.type" value="1">
+          <tr>
+            <td width="15%" align="right"><label>开奖期数:</label></td>
+            <td width="35%">
+            {$Rs.code}
+            <if condition="$Rs.playname neq ''">
+            ( {$Rs.playname} )
+            </if>
+            </td>
+            <td width="15%" align="right"><label>开奖日期:</label></td>
+            <td width="35%"><php>echo substr($Rs['addtime'],0,10);</php></td>
+          </tr>
+          <tr>
+            <td width="15%" align="right"><label>开奖号码:</label></td>
+            <td colspan="3">
+              <php>
+                $lt_num = $Rs['numbers'];
+                if($lt_num)
+                {
+                $lt_nums = explode('+',$lt_num);
+
+                $lt_nums1 = $lt_nums[0];
+                $lt_nums1 = str_replace(","," ",$lt_nums1);
+
+                if(isset($lt_nums[1])){
+                $lt_nums2 = $lt_nums[1];
+                $lt_nums2 = str_replace(","," ",$lt_nums2);
+              }
+
+              echo "<font color='red'>$lt_nums1</font>";
+              echo "<font color='blue'> $lt_nums2</font>";
+            }</php>
+          </td>
+        </tr>
+      </eq>
+
+      <!--优惠活动-->
+      <eq name="Rs.type" value="2">
+        <tr>
+          <td width="15%" align="right"><label>开始日期:</label></td>
+          <td width="35%">{$Rs.sdate}</td>
+          <td width="15%" align="right"><label>结束日期:</label></td>
+          <td width="35%">{$Rs.edate}</td>
+        </tr>
+        <tr>
+          <td width="15%" align="right"><label>活动地区:</label></td>
+          <td colspan="3">{$Rs.active_area|getareasname}</td>
+        </tr>
+      </eq>
+
+      <!--内部通知-->
+      <eq name="Rs.type" value="6">
+        <tr>
+          <td width="15%" align="right"><label>添加用户:</label></td>
+          <td width="35%">{$Rs.uname}</td>
+          <td width="15%" align="right"><label>发布时间:</label></td>
+          <td width="35%">{$Rs.addtime}</td>
+        </tr>
+        <tr>
+          <td width="15%" align="right"><label>通知地区:</label></td>
+          <td colspan="3">{$Rs.active_area|getareasname}</td>
+        </tr>
+      </eq>
+
+      <tr>
+        <td width="15%" align="right"><label>添加用户:</label></td>
+        <td width="35%">{$Rs.uname}</td>
+        <td width="15%" align="right"><label>发布时间:</label></td>
+        <td width="35%">{$Rs.addtime}</td>
+      </tr>
+      <tr>
+        <td align="right"><label>信息内容:</label></td>
+        <td colspan="3"></td>
+      </tr>
+      <tr>
+        <td colspan="4" style="padding:20px 30px;" class="infocontent">
+          {$Rs.value|htmlspecialchars_decode}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+  </ul>
+</div>

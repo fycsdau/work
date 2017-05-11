@@ -1,0 +1,102 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon am-icon-home"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <img src="__PUBLIC__/images/Dealerships.jpg" class="am-img-responsive">
+
+    <!--开奖-->
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+            <h2 class="am-titlebar-title ">网点列表</h2>
+            <nav class="am-titlebar-nav">
+                <a href="/index.php/dealerships/near" class="">查看附近网点</a>
+            </nav>
+        </div>
+        <div class="am-list-news-bd">
+            <ul class="am-list am-list-static am-list-border am-list-striped">
+
+                <volist name="list" id="list">
+                    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-right">
+                        <a href="/index.php/Dealerships/view/id/{$list.id}/">
+                            <div class="am-list-item-hd am-text-danger"><strong>{$list.title}</strong></div>
+                            <div class="am-list-main">
+                                {$list.addres}<br>
+                                <if condition="$list.tel neq ''">
+                                    {$list.tel} / 
+                                </if>
+                                <if condition="$list.phone neq ''">
+                                    {$list.phone}
+                                </if>
+                            </div>
+                        </a>
+                        <if condition="$list.showmaplink eq 1">
+                            <hr style="margin:1rem 0rem;">
+                            <div class="am-cf">
+                                <span class="am-fl"></span>
+                                <span class="am-fr am-text-sm mapview" 
+                                data-lng="{$list.lng}" 
+                                data-lat="{$list.lat}"
+                                data-title="{$list.title}"
+                                data-addres="{$list.addres}"
+                                >街景、导航</span>
+                            </div>
+                        </if>
+                    </li>
+                </volist>
+
+            </ul>
+
+            {$loadmore}
+
+        </div>
+    </div>
+    <!--开奖-->
+
+    <include file="Public/foot" />
+
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+        wx.config({
+            appId: '{$signPackage.appId}',
+            timestamp: {$signPackage.timestamp},
+            nonceStr: '{$signPackage.nonceStr}',
+            signature: '{$signPackage.signature}',
+            jsApiList: [
+            'checkJsApi',
+            'openLocation'
+            ]
+        });      
+        wx.ready(function () {
+            $(".mapview").on("click",function(){
+                var lat = $(this).attr("data-lat");
+                var lng = $(this).attr("data-lng");
+                var title = $(this).attr("data-title");
+                var addres = $(this).attr("data-addres");
+                if(lat && lng){
+                    lat = Number(lat);
+                    lng = Number(lng);
+                    title = String(title);
+                    addres = String(addres);
+                console.log("lat:"+ lat +"  |  lng:"+ lng +"  | title:"+title+"  | addres:"+addres);
+                    
+                    wx.openLocation({
+                        latitude: lat,
+                        longitude: lng,
+                        name: title,
+                        address: addres,
+                        scale: 28,
+                        infoUrl: ''
+                    });
+                }
+            })
+        });
+    </script>

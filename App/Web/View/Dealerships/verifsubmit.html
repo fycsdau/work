@@ -1,0 +1,162 @@
+<include file="Public/head" />
+
+<body>
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/webuploader/webuploader.css" />
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/webuploader/style.css" />
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/index.php/Dealerships/" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <!--内容显示-->
+    <div class="am-container">
+        <div class="am-g am-padding">
+            <div class="am-list-news-bd ">
+                <form class="am-form" id="verifsubmitform" action="/index.php/dealerships/verifsubmit" method="post">
+                    <ul class="am-list am-list-static am-list-border am-list-striped">
+                        <li class="am-g am-text-sm">
+                            <h1 style="text-align: center; margin: 0px;">网点认证申请资料提交</h1>
+                        </li>
+                        <li class="am-g am-text-sm">
+                            请提交真实资料，否则将会影响您的正常认证。<br>
+                            恶意提交的将面临被封号的危险哦。
+                        </li>
+                        <li class="am-g">
+                            <label>所属地区: </label>
+                            <select name="parentid" id="parentid" data-am-selected="{btnWidth: '100%', maxHeight: 300}" onchange="change_city();">
+                                <option value="0" selected>所属地区</option>
+                                <foreach name="orglist" item="v">
+                                    <option value="{$v.id}" <if condition="$v.id eq $area">selected</if> >
+                                        <php>echo str_replace("体彩分中心","",$v['title']);</php>
+                                    </option>
+                                </foreach>
+                            </select>
+                        </li>
+                        <li class="am-g">
+                            <label>网点编号: </label>
+                            <input type="text" id='title' name='title' class="" placeholder="请输入网点编号">
+                        </li>
+                        <li class="am-g">
+                            <label>业主姓名: </label>
+                            <input type="text" id='person' name='person' class="" placeholder="业主真实姓名">
+                        </li>
+                        <li class="am-g">
+                            <label>固定电话: </label>
+                            <input type="text" id='tel' name='tel' class="" placeholder="0371-12345678">
+                        </li>
+                        <li class="am-g">
+                            <label>联系手机: </label>
+                            <input type="text" id='phone' name='phone' class="" placeholder="请填写您的手机号码">
+                        </li>
+                        <li class="am-g">
+                            <label>网点介绍: </label>
+                            <textarea name="content" class="" rows="3" id="doc-ta-1"></textarea>
+                        </li>
+                        <li class="am-g">
+                            <label>资质/授权文件: </label>
+                            <input type="hidden" name="picfile" id="picfile">
+                            <div id="uploader">
+                                <div class="queueList">
+                                    <div id="dndArea" class="placeholder">
+                                        <div id="filePicker"></div>
+                                        <p>点击选择文件</p>
+                                    </div>
+                                </div>
+                                <div class="statusBar" style="display:none;">
+                                    <div class="progress">
+                                        <span class="text">0%</span>
+                                        <span class="percentage"></span>
+                                    </div><div class="info"></div>
+                                    <div class="btns">
+                                        <div id="filePicker2"></div><div class="uploadBtn">开始上传</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="am-g">
+                            <label>网点地址: </label>
+                            <span id="addrestr" style="display:block;">请在地图搜索框中输入地址进行搜索</span>
+                            <input type="text" name='addres' class="" id="addres" placeholder=""  style="display:none;">
+                            <input type='hidden' id='lat' name='lat' size='40' >
+                            <input type='hidden' id='lng' name='lng' size='40'>
+                            <input type='hidden' id='position' name='position'>
+                        </li>
+                        <li class="am-g" style="display:none;">
+                            <label>网点坐标: </label>
+                            <input type="text" class="" id="position" placeholder="">
+                        </li>
+                        <li class="am-g">
+                            <label>地图标注:</label>
+                            <br><span class="am-text-sm">输入完整地址搜索后点击对应位置即可</span>
+                            <iframe id="qqmap" src="/index.php/dealerships/bdmap_selectpoint" style="width:100%; height:300px; border:0px;" frameborder="0" scrolling="no"></iframe>
+                        </li>
+                        <li class="am-g">
+                            <button type="button" onclick="return verifsubmit_check();" class="am-btn am-btn-success am-radius am-btn-block">提交认证申请</button>
+                        </li>
+
+                        <script type="text/javascript">
+                            function change_city(){
+                                var city = $('#parentid').val();
+                            }
+                            function verifsubmit_check(){
+                                var parentid = $("#parentid").val();
+                                var title = $("#title").val();
+                                var person = $("#person").val();
+                                var tel = $("#tel").val();
+                                var phone = $("#phone").val();
+                                var addres = $("#addres").val();
+                                var position = $("#position").val();
+                                if(parentid == 0){
+                                    layer_alert("请选择所属地区");
+                                    $("#parentid").focus();
+                                    return false;
+                                }
+                                if(title == ''){
+                                    layer_alert("请填写网点名称");
+                                    $("#title").focus();
+                                    return false;
+                                }
+                                if(person == ''){
+                                    layer_alert("请填写网点负责人姓名");
+                                    $("#person").focus();
+                                    return false;
+                                }
+                                if(phone == ''){
+                                    layer_alert("请填写联系电话");
+                                    $("#phone").focus();
+                                    return false;
+                                }
+                                if(addres ==''){
+                                    layer_alert("请填写网点地址");
+                                    $("#addres").focus();
+                                    return false;
+                                }
+                                if(position ==''){
+                                    layer_alert("请在地图中输入搜索后标注网点准确位置");
+                                    $("#addres").focus();
+                                    return false;
+                                }
+                                $("#verifsubmitform").submit();
+                            }
+
+                        </script>
+
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--内容显示-->
+
+    <include file="Public/foot" />
+
+
+    <script type="text/javascript" src="__PUBLIC__/webuploader/jquery.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/webuploader/webuploader.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/webuploader/upload.js"></script>

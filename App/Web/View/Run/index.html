@@ -1,0 +1,30 @@
+<include file="Public/head" />
+
+<body class="has-footer">
+
+	<header class="page-header">
+		<div class="header-title">流氓监听</div>
+	</header>
+	
+	<script type="text/javascript">var navid =0;</script>
+	<include file="Public/foot" />
+	<script type="text/javascript">
+    
+    window.setInterval('call_dayu()', 2000 );
+    function call_dayu(){
+    	$.ajax({
+			type:"POST",
+			//url:"/Index.php/Index/ajaxCallDaYu",
+			url:"{:U('Index/ajaxCallDaYu')}",
+			//成功返回之后调用的函数   
+			success:function(data){
+				//alert(data);
+			},
+			
+		});
+    		
+	}
+
+	</script>
+</body>
+</html>

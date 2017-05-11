@@ -1,0 +1,72 @@
+<div class="bjui-pageHeader">
+  <form id="pagerForm" data-toggle="ajaxsearch" action="__URL__" method="post">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+
+    <div class="bjui-searchBar">
+      <label>关键词：</label>
+      <input type="text" value="{$_REQUEST['keys']}" name="keys" class="form-control" size="15" />
+      <button type="submit" class="btn-default" data-icon="search">查询</button>
+      <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a>
+      
+    </div> 
+    <div class="pull-right">
+         <span <php>echo display(CONTROLLER_NAME.'/add');</php> >
+             <a href="__URL__/add/navTabId/{:CONTROLLER_NAME}" class="btn btn-green" data-toggle="dialog" data-width="600" data-height="210" data-id="dialog-mask" data-mask="true" data-icon="plus">添加工作</a>
+         </span>
+     </div>
+  </form>
+
+</div>
+<div class="bjui-pageContent tableContent">
+  <table class="table table-bordered table-hover table-striped table-top" data-selected-multi="true" data-toggle="tablefixed">
+    <thead>
+      <tr>
+        <th align="center" width="60" height="30" align="center" data-order-direction="desc" data-order-field="id">编号</th>
+        <th align="center" data-order-direction="desc" data-order-field="job_name">工作名</th>
+        <th align="center" data-order-direction="desc" data-order-field="company">公司</th>
+        <th align="center" data-order-direction="desc" data-order-field="mobile">联系电话</th>
+        <th align="center" data-order-direction="desc" data-order-field="address">地址</th>
+        <th align="center" data-order-direction="desc" data-order-field="salary">工资</th>
+        <th align="center" data-order-direction="desc" data-order-field="add_time">添加时间</th>
+        <th align="center" data-order-direction="desc" data-order-field="use_status">发布状态</th>
+        <th align="center" data-order-direction="desc" data-order-field="status">审核状态</th>
+        <th align="center">编辑</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <volist id="v" name="list">
+        <tr>
+          <td align="center">{$v.job_id}</td>
+          <td align="center">{$v.job_name}</td>
+          <td align="center">{$v.company}</td>
+          <td align="center">{$v.mobile}</td>
+          <td align="center">{$v.address}</td>
+          <td align="center">{$v.salary}</td>
+          <td align="center">{$v.add_time}</td>
+          <td align="center">
+          	<if condition="$v.use_status eq '1'">正常<else/>已下架</if>
+		  </td>
+          <td align="center">
+          	<if condition="$v.status eq '1'">已通过<else/>未通过</if>
+		  </td>
+          <td align="center"> 
+            <span>
+              <a href="__URL__/info?job_id={$v.job_id}" class="btn btn-green btn-sm" data-toggle="dialog" data-width="1000" data-height="800" data-mask="true" >查看</a>
+            </span>
+          </td>
+        </tr> 
+      </volist>
+    </tbody>
+  </table>
+
+
+  <div class="bjui-pageFooter">
+    <div class="pages">
+    <span>共 {$totalCount} 条，每页 {$numPerPage} 条</span>
+    </div>
+    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$currentPage}">
+    </div>
+  </div>
+</div>

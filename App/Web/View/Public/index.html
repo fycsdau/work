@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="renderer" content="webkit">
+  <meta name="keywords" content="宿舍电费查询平台" />
+  <meta name="description" content="宿舍电费查询平台" />
+  <title>宿舍电费查询平台</title>
+  <link rel="stylesheet" href="assets/index.css" />
+  <script type="text/javascript" src="assets/jquery-1.7.2.js"></script>
+  <script type="text/javascript" src="assets/action.js"></script>
+  <script language="javascript" type="text/javascript" src="assets/My97DatePicker/WdatePicker.js"></script>
+</head>
+<body style="padding:0px 0px 225px 0px;">
+
+  <img src="assets/bg.jpg" style="width:100%;position: absolute; z-index:-1;">
+  <div class="width">
+
+    <div class="logo">
+      <div class="logotitle">
+        <font face="Microsoft YaHei" size="5"><b>宿舍电费查询平台</b></font>
+      </div>
+      <div class="logotext">
+        Dormitory electricity inquiry platform
+      </div>
+    </div>
+
+    <div class="menu w-columnbox">
+      <div class="menuleft"></div>
+      <ul>
+        <li><a href="index.html" class="focus">消费电量信息查询</a></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <!--li><a href="low_power.html">低电量提醒列表</a></li-->
+      </ul>
+      <div class="menuright"></div>
+
+    </div>
+
+    <div class="search_table">
+      <table border="0" cellpadding="0" cellspacing="0" style="width:100%;">
+        <tr>
+          <td width="20%" class="td_1">数据查询</td>
+          <td width="30%" class="td_2" colspan="3">
+            <select id="data_type" name="data_type" onchange="if(this.value=='power'){$('#datatr').show();}else{$('#datatr').hide();}">
+              <option value="accounts">电表帐户查询</option>
+              <option value="power">消费电量查询</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td width="20%" class="td_1">公寓名称</td>
+          <td width="30%" class="td_2">
+            <select id="house" name="house" onchange="load_room();">
+              <option value="">请选择</option>
+              <script type="text/javascript">
+              load_house();
+              </script>
+            </select>
+          </td>
+          <td width="20%" class="td_1">房间编号</td>
+          <td width="30%" class="td_2">
+            <select id="room" name="room">
+              <option value="">请选择</option>
+            </select>
+          </td>
+        </tr>
+        <tr id="datatr" style="display:none;">
+          <td class="td_1">开始日期</td>
+          <td class="td_2"><input type="text" id="stime" name="stime" onClick="WdatePicker()" onfocus="WdatePicker()"></td>
+          <td class="td_1">结束日期</td>
+          <td class="td_2"><input type="text" id="etime" name="etime" onClick="WdatePicker()" onfocus="WdatePicker()"></td>
+        </tr>
+        <tr>
+          <td class="td_1">&nbsp;</td>
+          <td class="td_2" colspan="3"><input type="submit" onclick="search_data();" value=" 查询数据 "></td>
+        </tr>
+      </table>
+    </div>
+
+    <div id="data_show">
+
+      <table class="table" width="100%">
+        <thead>
+          <tr>
+            <th align="center">公寓名称</th>
+            <th align="center">房间名称</th>
+            <th align="center">电表读数</th>
+            <th align="center">电费余额</th>
+            <th align="center">抄表日期</th>
+            <th align="center">房间状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+
+
+    </div>
+
+  </div>
+
+  <div style="position:fixed; width:100%; bottom:0px; left:0px;">
+    <div class="low_power_tips">
+      <div class="width" style="position:relative; padding:70px 0px 0px 0px;">
+       <div style="position:absolute; left:10px; top:15px; height:50px; line-height:25px;">
+        低电量提示列表：
+        <li class="top">
+          <span class="housename">公寓名称</span>
+          <span class="roomname">房间名称</span>
+          <span class="powercount">电表读数</span>
+          <span class="smoney">电费余额</span>
+          <span class="readdate">抄表日期</span>
+          <span class="slavestate">房间状态</span>
+        </li>
+      </div>
+
+      <div class="ranklist">
+        <ul id="low_power_list">
+          <script type="text/javascript">
+          load_low_power();
+          </script>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="copyright">
+    <div class="width">
+      如有问题，请拨打电话：0000 - 0000 0000　｜　工作时间：08:00 - 18:00
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

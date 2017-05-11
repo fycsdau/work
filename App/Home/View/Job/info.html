@@ -1,0 +1,104 @@
+<div class="bjui-pageContent tableContent">
+	<style>
+		.li-class{
+			line-height:40px;
+			font-size:18px;
+		}
+		.span-left{
+			height:40px;
+			width:10%;
+			float: left;
+			font-size:18px;
+			text-align:right;
+			margin-top:16px;
+			border-bottom:1px dashed #cccccc;
+		}
+		.span-right{
+			height:40px;
+			width:87%;
+			float: left;
+			font-size:18px;
+			margin-left:3%;
+			margin-top:16px;
+			border-bottom:1px dashed #cccccc;
+		}
+		.span-left1{
+			height:40px;
+			width:10%;
+			float: left;
+			font-size:18px;
+			text-align:right;
+			margin-top:16px;
+		}
+		.span-right1{
+			width:87%;
+			float: left;
+			font-size:18px;
+			margin-left:3%;
+			margin-top:16px;
+			border-bottom:1px dashed #cccccc;
+		}
+	</style>
+	<ul style="margin-top:20px;">
+		<li class="li-class">
+			<span class="span-left">公司名称:</span>
+			<span class="span-right">{$info.company}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">招聘标题:</span>
+			<span class="span-right">{$info.job_name}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">职位名称:</span>
+			<span class="span-right">{$job_type}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">简介:</span>
+			<span class="span-right">{$info.desc}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">联系人:</span>
+			<span class="span-right">{$info.con_name}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">联系电话:</span>
+			<span class="span-right">{$info.mobile}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">工资待遇:</span>
+			<span class="span-right">{$info.salary}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">招聘人数:</span>
+			<span class="span-right">{$info.need_count}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">学历:</span>
+			<span class="span-right">{$educational}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">工作经验:</span>
+			<span class="span-right">{$experience}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">工作地址:</span>
+			<span class="span-right">{$info.address}</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">招聘状态:</span>
+			<span class="span-right">
+				<if condition="info.use_status eq '1'">正常<else/>已下架</if>
+			</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left">审核状态:</span>
+			<span class="span-right">
+			<if condition="info.status eq '1'">已审核<else/>未审核</if>
+			</span>
+		</li>
+		<li class="li-class">
+			<span class="span-left1">详情介绍:</span>
+			<span class="span-right1">{$info.content}</span>
+		</li>
+	</ul>
+</div>

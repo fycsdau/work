@@ -1,0 +1,76 @@
+<include file="Public/head" />
+
+<body style="background:url(__PUBLIC__/Amazeui/i/5-13050GTF7.png)">
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}" style="z-index: 9;">
+        <div class="am-header-left am-header-nav">
+            <a href="/index.php/" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+        <div class="am-header-right am-header-nav">
+            <a href="/index.php/user/infoedit/id/{$user_id}" class="">
+                <i class="am-header-icon am-icon-pencil-square-o"></i>
+                修改
+            </a>
+        </div>
+
+    </header>
+
+    <!--内容显示-->
+    <div>
+        <img src="{$userinfo.headimgurl}" class="am-img-responsive am-img-thumbnail am-circle" style="width:50%; margin:20px auto 10px auto;">
+        <h1 style="margin:0px; text-align:center;">{$userinfo.user_name}</h1>
+        <div>{$userinfo.user_auth|getdepname}</div>
+    </div>
+    <style type="text/css">
+        .am-list li{padding-left:3rem;padding-right:3rem;}
+    </style>
+    <ul class="am-list am-list-static am-list-striped">
+        <li>
+            <div class="am-cf">
+                <span class=" am-fl">我的性别: </span>
+                <span class="am-fr"><if condition="$userinfo.sex EQ 1 ">男<else />女</if></span>
+            </div>
+        </li>
+        <li>
+            <div class="am-cf">
+                <span class=" am-fl">常住城市: </span>
+                <span class="am-fr">{$userinfo.user_city|getareasname}</span>
+            </div>
+        </li>
+        <li>
+            <div class="am-cf">
+                <span class=" am-fl">手机号码: </span>
+                <span class="am-fr">
+                    <if condition="$userinfo.user_phone EQ '' ">
+                        <font color="red">未验证</font>
+                        <else />
+                        {$userinfo.user_phone}
+                    </if>
+                </span>
+            </div>
+        </li>
+        <li>
+            <div class="am-cf">
+                <span class=" am-fl">关注时间: </span>
+                <span class="am-fr">
+                <php>
+                    echo date("Y年m月d日",$userinfo['subscribe_time']);
+                </php>
+                </span>
+            </div>
+        </li>
+        <li></li>
+        <li>
+            <div class="am-cf">
+                <span class=" am-fl">我的积分: </span>
+                <span class="am-fr">{$userinfo.points|default=0}</span>
+            </div>
+        </li>
+        <li></li>
+    </ul>
+    <!--内容显示-->
+
+    <include file="Public/foot" />

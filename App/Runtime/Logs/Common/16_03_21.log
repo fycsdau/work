@@ -1,0 +1,42 @@
+[ 2016-03-21T11:30:27+08:00 ] ::1 /admin.php/WeiChat/Admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:WeiChat
+
+[ 2016-03-21T11:30:40+08:00 ] ::1 /admin.php/WeChat/Admin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:WeChat
+
+[ 2016-03-21T11:30:49+08:00 ] ::1 /admin.php/WeChat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:WeChat
+
+[ 2016-03-21T11:31:17+08:00 ] ::1 /admin.php/WeChat/wechat.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:WeChat
+
+[ 2016-03-21T12:22:25+08:00 ] ::1 /admin.php/WeChat/wechat.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:WeChat
+
+[ 2016-03-21T12:22:29+08:00 ] ::1 /admin.php/WeChat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:WeChat
+
+[ 2016-03-21T12:22:53+08:00 ] ::1 /admin.php/WeChat
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+ERR: 无法加载模块:WeChat
+

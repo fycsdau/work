@@ -1,0 +1,65 @@
+<div class="bjui-pageContent">
+    <form action="__URL__/edit/navTabId/fans" class="pageForm" data-toggle="validate">
+        <input type="hidden" name="id" value="{$id}">
+        <div class="pageFormContent" data-layout-h="0">
+            <table class="table table-condensed table-hover" width="100%">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="user_name" class="control-label x85">用户姓名:</label>
+                            <input type="text" data-rule="required" size="25" name="user_name" id="user_name" value="{$Rs['user_name']}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="user_phone" class="control-label x85">手机号码:</label>
+                            <input type="text" data-rule="required" size="25"  name="user_phone" id="user_phone" value="{$Rs['user_phone']}" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="user_city" class="control-label x85">所在中心: </label>
+                            <select  name="user_city" data-toggle="selectpicker" data-rule="required">
+                                <option  value="0">请选择</option>
+                                <foreach name="orglist" item="v">
+                                    <option <if condition="$v.id EQ $Rs['user_city'] ">selected </if> value="{$v.id}" >
+                                        <switch name="v.level">  
+                                            <case value="0"></case> 
+                                            <case value="1">　</case>
+                                            <case value="2">　　</case>
+                                            <case value="3">　　　</case>
+                                            <default />
+                                        </switch>
+                                        {$v.title}
+                                    </option>
+                                </foreach>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="user_auth" class="control-label x85">用户权限:</label>
+                            <select  name="user_auth" data-toggle="selectpicker" data-rule="required">
+                                <option value="0">请选择</option>
+                                <foreach name="auth_list" item="v">
+                                    <option <if condition="$v.id EQ $Rs['user_auth'] ">selected </if> value="{$v.id}" >
+                                        {$v.name}
+                                    </option>
+                                </foreach>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+</div>
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+    </ul>
+</div>	

@@ -1,0 +1,86 @@
+[ 2016-01-13T21:54:27+08:00 ] ::1 /index.php/Web/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000475s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000486s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000548s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+ERR: 无法加载控制器:Public
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-01-13T21:55:32+08:00 ] ::1 /index.php/Web/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000564s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000510s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+ERR: 无法加载控制器:Public
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-01-13T21:55:34+08:00 ] ::1 /index.php/Web/public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000479s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+ERR: 无法加载控制器:Public
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-01-13T21:55:38+08:00 ] ::1 /index.php/Web/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000501s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+ERR: 无法加载控制器:Index
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-01-13T21:57:43+08:00 ] ::1 /index.php/Web/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000398s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000897s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+
+[ 2016-01-13T21:57:58+08:00 ] ::1 /index.php/Web/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000499s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000483s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000541s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+SQL: SELECT * FROM `lthn_user` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000099s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lthn_user` WHERE `update_time` > 1452692878 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=0 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Web/fdadc0cb853e6a87c236a2f2c6712c5b.php 第 157 行.
+SQL: SHOW COLUMNS FROM `lthn_auth_group_access` [ RunTime:0.0016s ]
+SQL: SELECT `rules` FROM lthn_auth_group_access a INNER JOIN lthn_auth_group g on a.group_id=g.id  WHERE ( a.uid='' and g.status='1' )  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Web/fdadc0cb853e6a87c236a2f2c6712c5b.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Web/fdadc0cb853e6a87c236a2f2c6712c5b.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Web/fdadc0cb853e6a87c236a2f2c6712c5b.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Web/fdadc0cb853e6a87c236a2f2c6712c5b.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Web/fdadc0cb853e6a87c236a2f2c6712c5b.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Web/fdadc0cb853e6a87c236a2f2c6712c5b.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Web/fdadc0cb853e6a87c236a2f2c6712c5b.php 第 157 行.
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'letouhenan.lthn_mygo' doesn't exist
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+

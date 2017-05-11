@@ -1,0 +1,32 @@
+<div class="bjui-pageContent tableContent">
+    <table class="table table-bordered table-hover table-striped table-top" data-selected-multi="true" data-toggle="tablefixed">
+        <thead>
+            <tr>
+                <th align="center" height=30>登陆账号</th>
+                <th align="center">真实姓名</th>
+                <th align="center">系统角色</th>
+                <th align="center">移动电话</th>
+                <th align="center">登录IP</th>
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name="list" item="v">
+                <tr>
+                    <td align="center" height=30>{$v.username}</td>
+                    <td align="center">{$v.truename}</td>
+                    <td align="center">{$v.depid|getdepname} </td>
+                    <td align="center">{$v.phone}</td>
+                    <td align="center"><a href="http://ip138.com/ips138.asp?ip={$v.loginip}&action=2" target="_blank">{$v.loginip}</a></td>
+                </tr> 
+            </foreach>
+        </tbody>
+    </table>
+</div>
+
+<div class="bjui-pageFooter">
+    <div class="pages">
+        <span>共 {$totalCount} 条  每页 {$numPerPage} 条</span>
+    </div>
+    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$currentPage}">
+    </div>
+</div>

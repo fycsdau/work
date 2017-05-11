@@ -1,0 +1,51 @@
+<include file="Public/head" />
+
+<body>
+    <header class="page-header">
+        <i class="header-left icon-func user-icon-fanhui"></i>
+        <div class="header-title">修改我的信息</div>
+    </header>
+    <section class="container">
+        <section class="member">
+            <div class="member-header">
+                <div class="mask"></div>
+                <div class="member-info">
+                    <div class="member-name">{$userinfo.nickname}</div>
+                    <div>会员ID：{$userinfo.user_id}</div>
+                    <div>级别：会员</div>
+                </div>
+                <div class="member-avatar" style="top:2rem; bottom:0rem;"><img src="{$userinfo.headimgurl}" alt=""></div>
+            </div>
+        </section>
+
+
+        <form method="post" action="__SELF__">
+            <section class="mui-input-group">
+                <div class="mui-input-row">
+                    <label>手机号码：</label>
+                    <input type="text" name="phone" class="mui-input-clear" placeholder="请填写您的常用手机号" data-input-clear="3"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                </div>
+                <div class="mui-input-row">
+                    <label>电子邮箱：</label>
+                    <input type="text" name="email" class="mui-input-clear" placeholder="请填写您的常用电子邮箱" data-input-clear="1"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                </div>
+                <div class="mui-input-row">
+                    <label>您的性别：</label>
+                    <input type="text" name="bankcode" class="mui-input-clear" placeholder="请选择您的性别" data-input-clear="2"><span class="mui-icon mui-icon-clear mui-hidden"></span>
+                </div>
+                <div id="showUserPicker" class="mui-input-row">
+                    <label>您的生日：</label>
+                    <input type="text" name="bankname" id="userResult" placeholder="请选择您的出生日期">
+                </div>
+            </section>
+            <section class="mui-content-padded form-op-section">
+                <button type="button" class="mui-btn mui-btn-block mui-btn-success btn-action" onclick="$(this.form).submit();">保存</button>
+            </section>
+        </form>
+
+        
+    </section>
+    <script type="text/javascript">var navid =2;</script>
+    <include file="Public/foot" />
+</body>
+</html>

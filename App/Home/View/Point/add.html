@@ -1,0 +1,127 @@
+<div class="bjui-pageContent">
+  <form action="__URL__/add/navTabId/org_point" class="pageForm" data-toggle="validate" id="addpoint">
+    <div class="pageFormContent" data-layout-h="0">
+      <table class="table table-condensed table-hover" width="100%">
+        <tbody>
+          <tr>
+            <td align="right">
+              <label for='phone' class='control-label'>所属中心:</label>
+            </td>
+            <td colspan="3">
+              <select  name="parentid" data-toggle="selectpicker" data-rule="required">
+                <foreach name="orglist" item="v">
+                  <option value="{$v.id}">
+                    <switch name="v.level">  
+                      <case value="0"></case> 
+                      <case value="1">　</case>
+                      <case value="2">　　</case>
+                      <case value="3">　　　</case>
+                      <default />
+                    </switch>
+                    {$v.title}
+                  </option>
+                </foreach>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td width="15%" align="right">
+              <label for='title' class='control-label'>网点名称:</label>
+            </td>
+            <td width="30%">
+              <input type='text' id='title' name='title' data-rule='required;' size='20' placeholder="">
+            </td>
+            <td width="15%" align="right">
+              <label for='person' class='control-label'>业主姓名:</label>
+            </td>
+            <td width="40%;">
+              <input type='text' id='person' name='person' data-rule='required;' size='20' placeholder="">
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='phone' class='control-label'>固定电话:</label>
+            </td>
+            <td>
+              <input type='text' id='tel' name='tel' data-rule='required;' size='20' placeholder="">
+            </td>
+            <td align="right">
+              <label for='phone' class='control-label'>手机号码:</label>
+            </td>
+            <td>
+              <input type='text' id='phone' name='phone' data-rule='required;' size='20' maxlength="11" placeholder="">
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='phone' class='control-label'>认证状态:</label>
+            </td>
+            <td>
+              <select name="status" id="verif_status" data-toggle="selectpicker">
+                <volist name="verif_status" id="item">
+                  <option value="{$item.id}" 
+                  <if condition="$item.id eq 1">selected</if>
+                  >{$item.name}</option>
+                </volist>
+              </select>
+            </td>
+            <td align="right" class="verif_date">
+              <label for='verifdate' class='control-label'>认证时间:</label>
+            </td>
+            <td class="verif_date">
+              <input type='text' id='verifdate' name='verifdate'  size='20' placeholder=""  data-toggle="datepicker">
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='content' class='control-label'>网点介绍:</label>
+            </td>
+            <td colspan="3">
+              <textarea name='content' id="content" style="width:100%; height:40px;"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" align="right">
+              <label for='addres' class='control-label'>网点地址:</label>
+            </td>
+            <td colspan="3">
+              <span id="addrestr">请在地图搜索框中输入地址进行搜索</span>
+              <input type='text' id='addres' name='addres' data-rule='required;' size='40' placeholder="" style="display:none;">
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" align="right">
+              <label for='addres' class='control-label'>网点坐标:</label>
+            </td>
+            <td colspan="3">
+              <span id="positiontr">在地图中点击对应位置即设置坐标</span>
+              <input type='text' id='position' name='position' size='40' placeholder="" style="display:none;">
+
+              <input type='hidden' id='lat' name='lat' size='40' >
+              <input type='hidden' id='lng' name='lng' size='40'>
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" align="left" colspan="4">
+              <iframe id="qqmap" src="/admin.php/Home/Public/bdmap_selectpoint" style="width:100%; height:300px; border:0px;" frameborder="0" scrolling="no"></iframe>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+            </td>
+            <td colspan="3">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </form>
+</div>
+
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+  </ul>
+</div>

@@ -1,0 +1,166 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon am-icon-home"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <img src="__PUBLIC__/images/Lottery.jpg" class="am-img-responsive">
+
+    <!--开奖-->
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+            <h2 class="am-titlebar-title ">开奖信息</h2>
+        </div>
+        <div class="am-list-news-bd">
+            <ul class="am-list am-list-static am-list-border am-list-striped lotterylist">
+                <!--大乐透-->
+                <li class="am-g">
+                    <div class="am-cf">
+                        <div>
+                            <span class="am-fr am-text-xs">
+                                <a href="/index.php/rules/view/id/46/">
+                                    每周一、三、六晚开奖
+                                </a>
+                            </span>
+                            <a href="/index.php/lottery/lists/playname/{$lottery_dlt.playname}/">{$lottery_dlt.playname}</a>
+                        </div>
+                        <!--hr class="am-margin-top-xs am-margin-bottom-xs"-->
+                        <span class="am-fl">第 {$lottery_dlt.code} 期 
+                        </span>
+                        <span class="am-fr">
+                            <php>echo substr($lottery_dlt['addtime'],0,10);</php>
+                        </span>
+                    </div>
+                    <div class="am-cf"><hr class="am-margin-top-xs am-margin-bottom-xs"></div>
+                    <a href="/index.php/lottery/view/id/{$lottery_dlt.id}/">
+                        <php>
+                            $lt_num = $lottery_dlt['numbers'];
+                            $lt_num = str_replace('+',',',$lt_num);
+                            $lt_num = str_replace(' ',',',$lt_num);
+                            $lt_nums = explode(',', $lt_num);
+                        </php>
+                        <foreach name="lt_nums" item="lt_nums" key="k" >
+                            <if condition="$k elt 4">
+                                <font class='rednum'>{$lt_nums}</font>
+                                <else />
+                                <font class='bluenum'>{$lt_nums}</font>
+                            </if>
+                        </foreach>
+                    </a>
+                </li>
+                <!--大乐透-->
+
+                <!--排列3-->
+                <li class="am-g">
+                    <div class="am-cf">
+                        <div>
+                            <span class="am-fr am-text-xs">
+                                <a href="/index.php/rules/view/id/47/">
+                                    每天20:30开奖，每天一期
+                                </a>
+                            </span>
+                            <a href="/index.php/lottery/lists/playname/{$lottery_pl3.playname}/">{$lottery_pl3.playname}</a>
+                        </div>
+                        <!--hr class="am-margin-top-xs am-margin-bottom-xs"-->
+                        <span class="am-fl">第 {$lottery_pl3.code} 期 
+                        </span>
+                        <span class="am-fr">
+                            <php>echo substr($lottery_pl3['addtime'],0,10);</php>
+                        </span>
+                    </div>
+                    <div class="am-cf"><hr class="am-margin-top-xs am-margin-bottom-xs"></div>
+                    <a href="/index.php/lottery/view/id/{$lottery_pl3.id}/">
+                        <php>
+                            $lt_num = $lottery_pl3['numbers'];
+                            $lt_num = str_replace('+',',',$lt_num);
+                            $lt_num = str_replace(' ',',',$lt_num);
+                            $lt_nums = explode(',', $lt_num);
+                        </php>
+                        <foreach name="lt_nums" item="lt_nums" key="k" >
+                            <font class='rednum'>{$lt_nums}</font>
+                        </foreach>
+                    </a>
+                </li>
+                <!--排列3-->
+
+                <!--排列5-->
+                <li class="am-g">
+                    <div class="am-cf">
+                        <div>
+                            <span class="am-fr am-text-xs">
+                                <a href="/index.php/rules/view/id/48/">
+                                    每晚开奖，每天一期
+                                </a>
+                            </span>
+                            <a href="/index.php/lottery/lists/playname/{$lottery_pl5.playname}/">{$lottery_pl5.playname}</a>
+                        </div>
+                        <!--hr class="am-margin-top-xs am-margin-bottom-xs"-->
+                        <span class="am-fl">第 {$lottery_pl5.code} 期 
+                        </span>
+                        <span class="am-fr">
+                            <php>echo substr($lottery_pl5['addtime'],0,10);</php>
+                        </span>
+                    </div>
+                    <div class="am-cf"><hr class="am-margin-top-xs am-margin-bottom-xs"></div>
+                    <a href="/index.php/lottery/view/id/{$lottery_pl5.id}/">
+                        <php>
+                            $lt_num = $lottery_pl5['numbers'];
+                            $lt_num = str_replace('+',',',$lt_num);
+                            $lt_num = str_replace(' ',',',$lt_num);
+                            $lt_nums = explode(',', $lt_num);
+                        </php>
+                        <foreach name="lt_nums" item="lt_nums" key="k" >
+                            <font class='rednum'>{$lt_nums}</font>
+                        </foreach>
+                    </a>
+                </li>
+                <!--排列5-->
+
+                <!--7星彩-->
+                <li class="am-g">
+                    <div class="am-cf">
+                        <div>
+                            <span class="am-fr am-text-xs">
+                                <a href="/index.php/rules/view/id/49/">
+                                    每周二、五、日晚开奖
+                                </a>
+                            </span>
+                            <a href="/index.php/lottery/lists/playname/{$lottery_qxc.playname}/">{$lottery_qxc.playname}</a>
+                        </div>
+                        <!--hr class="am-margin-top-xs am-margin-bottom-xs"-->
+                        <span class="am-fl">第 {$lottery_qxc.code} 期 
+                        </span>
+                        <span class="am-fr">
+                            <php>echo substr($lottery_qxc['addtime'],0,10);</php>
+                        </span>
+                    </div>
+                    <div class="am-cf"><hr class="am-margin-top-xs am-margin-bottom-xs"></div>
+                    <a href="/index.php/lottery/view/id/{$lottery_qxc.id}/">
+                        <php>
+                            $lt_num = $lottery_qxc['numbers'];
+                            $lt_num = str_replace('+',',',$lt_num);
+                            $lt_num = str_replace(' ',',',$lt_num);
+                            $lt_nums = explode(',', $lt_num);
+                        </php>
+                        <foreach name="lt_nums" item="lt_nums" key="k" >
+                            <font class='rednum'>{$lt_nums}</font>
+                        </foreach>
+                    </a>
+                </li>
+                <!--7星彩-->
+            </ul>
+
+            {$loadmore}
+
+        </div>
+    </div>
+    <!--开奖-->
+
+    <include file="Public/foot" />

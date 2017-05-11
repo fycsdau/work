@@ -1,0 +1,60 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/index.php/lottery/" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <img src="__PUBLIC__/images/Lottery.jpg" class="am-img-responsive">
+
+    <!--开奖-->
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+            <h2 class="am-titlebar-title ">开奖信息</h2>
+        </div>
+        <div class="am-list-news-bd">
+            <ul class="am-list am-list-static am-list-border am-list-striped lotterylist">
+                <volist name="list" id="list">
+                    <li class="am-g">
+                        <a href="/index.php/lottery/view/id/{$list.id}/">
+                            <div class="am-cf">
+                                {$list.playname}
+                                <span>第 {$list.code} 期 
+                                    <php>echo substr($list['addtime'],0,10);</php>
+                                </span>
+                            </div>
+                            <php>
+                                $lt_num = $list['numbers'];
+                                $lt_num = str_replace('+',',',$lt_num);
+                                $lt_num = str_replace(' ',',',$lt_num);
+                                $lt_nums = explode(',', $lt_num);
+                            </php>
+                            <foreach name="lt_nums" item="lt_nums" key="k" >
+                                <if condition="$list.playname neq '7星彩'">
+                                    <if condition="$k elt 4">
+                                        <font class='rednum'>{$lt_nums}</font>
+                                        <else />
+                                        <font class='bluenum'>{$lt_nums}</font>
+                                    </if>
+                                    <else />
+                                    <font class='rednum'>{$lt_nums}</font>
+                                </if>
+                            </foreach>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+
+            {$loadmore}
+
+        </div>
+    </div>
+    <!--开奖-->
+
+    <include file="Public/foot" />

@@ -1,0 +1,65 @@
+<include file="Public/head" />
+
+<body>
+    <header class="page-header">
+        <i class="header-left icon-func user-icon-fanhui"></i>
+        <div class="header-title">代言人推广</div>
+    </header>
+    <section class="container">
+        <section>
+            <div class="section-box-white section-padded">
+                <div class="section-box-item">
+                    <div>可用金额：<span>¥ {$userinfo.user_money}</span></div>
+                    <div>冻结金额：<span>¥ {$userinfo.frozen_money}</span></div>
+                </div>
+                <a href="withdrawal" class="mui-btn mui-btn-success"
+                <eq name="userinfo['user_money']" value="0.00">
+                onclick="return false;"
+                </eq>
+                >提现</a>
+            </div>
+        </section>
+        <section class="member-options">
+            <div class="section-title">
+            我的伙伴
+            </div>
+            <div class="mui-card">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <a href="friends/type/bigpartner" class="mui-navigate-right noloading"
+                        <eq name="big_partner" value="0">onclick="return false;"</eq>
+                        >
+                            <div class="section-box">
+                                <div class="section-box-item">我的大伙伴</div>
+                                <div class="spokes-num">{$big_partner_order} / {$big_partner}</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a href="friends/type/partner" class="mui-navigate-right noloading"
+                        <eq name="partner" value="0">onclick="return false;"</eq>
+                        >
+                            <div class="section-box">
+                                <div class="section-box-item">我的中伙伴</div>
+                                <div class="spokes-num">{$partner_order} / {$partner}</div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a href="friends/type/smallpartner" class="mui-navigate-right noloading"
+                        <eq name="small_partner" value="0">onclick="return false;"</eq>
+                        >
+                            <div class="section-box">
+                                <div class="section-box-item">我的小伙伴</div>
+                                <div class="spokes-num">{$small_partner_order} / {$small_partner}</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+    <script type="text/javascript">var navid =2;</script>
+    <include file="Public/foot" />
+</body>
+</html>

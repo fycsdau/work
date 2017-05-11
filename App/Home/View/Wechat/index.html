@@ -1,0 +1,89 @@
+<div class="bjui-pageHeader" style="padding:10px 10px;">
+  <label>微信接口参数配置</label>
+    <div class="pull-right">
+      <span >
+      微信公众平台: <a href="http://mp.weixin.qq.com" target="_blank">mp.weixin.qq.com</a>
+      </span>
+    </div>
+</div>
+
+<div class="bjui-pageContent">
+  <form action="__URL__/savecongfig/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+    <input type="hidden" name="id" value="{$id}">
+    <div class="pageFormContent" data-layout-h="0">
+      <table class="table table-condensed table-hover" width="100%">
+        <tbody>
+          <tr>
+            <td width="160" align="right">
+              <label for='appid' class='control-label x185'>AppID(应用ID):</label>
+            </td>
+            <td>
+              <input type='text' id='appid' name='appid' data-rule='required;' size='20' value="{$config.appid}" >
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              微信公众平台 - 开发者中心 - 开发者ID - AppID(应用ID)
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='appsecret' class='control-label x185'>AppSecret(应用密钥):</label>
+            </td>
+            <td>
+              <input type='text' id='appsecret' name='appsecret' data-rule='required;' size='20' value="{$config.appsecret}" >
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              微信公众平台 - 开发者中心 - 开发者ID - AppSecret(应用密钥)
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='token' class='control-label x185'>Token(应用令牌):</label>
+            </td>
+            <td>
+              <input type='text' id='token' name='token' data-rule='required;' size='20' value="{$config.token}">
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              微信公众平台 - 开发者中心 - 服务器配置 - Token(令牌)
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='url' class='control-label x185'>URL(接口路径):</label>
+            </td>
+            <td>
+              <input type='text' id='url' name='url' data-rule='required;' size='20' value="{$config.url}">
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              微信接口配置文件所在目录
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </form>
+</div>
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+  </ul>
+</div>

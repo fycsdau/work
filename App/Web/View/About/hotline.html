@@ -1,0 +1,41 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/index.php/rules/" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+
+    <!--内容显示-->
+    <div class="am-container">
+        <div class="am-g am-padding">
+            <article class="am-article">
+                <div class="am-article-bd">
+                    {$Rs.value}
+                </div>
+                <div class="am-list-news-bd am-margin-top">
+                    <ul class="am-list am-list-static am-list-border am-list-striped">
+                        <volist name="orglist" id="list">
+                            <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-right">
+                                <div class="am-list-item-hd am-text-danger"><strong>{$list.title}</strong></div>
+
+                                <div class="am-list-main">
+                                    <strong>地址:</strong> {$list.address}<br>
+                                    <strong>电话:</strong> {$list.tel}
+                                </div>
+                            </li>
+                        </volist>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+    <!--内容显示-->
+
+    <include file="Public/foot" />

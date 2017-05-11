@@ -1,0 +1,35 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/index.php/commonweal/" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+
+        <h1 class="am-header-title">{$page_title}</h1>
+
+    </header>
+
+    <!--内容显示-->
+    <div class="am-container">
+        <div class="am-g am-padding">
+            <article class="am-article">
+                <div class="am-article-hd">
+                    <h3 class="am-article-title">{$Rs.title}</h3>
+                    <p class="am-article-meta">{$Rs['addtime']}</p>
+                </div>
+
+                <div class="am-article-bd">
+                    <p class="am-article-lead">{$Rs.desc}</p>
+                    
+                    {$Rs.value}
+                </div>
+            </article>
+        </div>
+    </div>
+    <!--内容显示-->
+
+    <include file="Public/foot" />

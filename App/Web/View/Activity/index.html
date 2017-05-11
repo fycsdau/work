@@ -1,0 +1,75 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon am-icon-home"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <img src="__PUBLIC__/images/activity.jpg" class="am-img-responsive">
+
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+            <h2 class="am-titlebar-title ">{$page_title}</h2>
+
+            <nav class="am-titlebar-nav">
+                <select id="active_area" data-am-selected="{maxHeight: 200, btnWidth: 100, btnSize: 'sm', btnStyle: 'danger'}" name="active_area">
+                    <option value="0" selected="selected">活动地区</option>
+                    <foreach name="orglist" item="v">
+                        <option value="{$v.id}" <if condition="$v.id eq $area">selected</if> >
+                            <php>echo str_replace("体彩分中心","",$v['title']);</php>
+                        </option>
+                    </foreach>
+                </select>
+            </nav>
+        </div>
+
+        <div class="am-list-news-bd">
+            <ul class="am-list">
+                <volist name="list" id="list">
+                    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-right">
+                        <a href="/index.php/activity/view/id/{$list.id}/" class="">
+                            <h3 class="am-list-item-hd">
+                                {$list.title}
+                            </h3>
+
+                            <div class=" am-list-main">
+                                <div class="am-list-item-text">
+                                    <strong>活动地区:</strong>
+                                    {$list.active_area|getactivearea}
+                                </div>
+                                <if condition="$list['sdate'] neq '0000-00-00 00:00:00'">
+                                    <div class="am-list-item-text">
+                                        <strong>活动时间:</strong>
+                                        <php>echo substr($list['sdate'],0,10);</php> 至 
+                                        <php>echo substr($list['edate'],0,10);</php>
+                                    </div>
+                                </if>
+
+                                <div class="am-list-item-text">{$list.desc}</div>
+                            </div>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+
+            {$loadmore}
+
+        </div>
+    </div>
+
+    <include file="Public/foot" />
+
+    <script type="text/javascript">
+        $(document).on("change","#active_area",function(){
+            var area = $("#active_area").val();
+            if(area){
+                window.location.href="/index.php/activity/index/area/"+area;
+            }
+        });
+    </script>

@@ -1,0 +1,54 @@
+<div class="bjui-pageHeader">
+  <form id="pagerForm" data-toggle="ajaxsearch" action="__URL__" method="post">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+
+    <div class="bjui-searchBar">
+      <label>关键词：</label>
+      <input type="text" value="{$_REQUEST['keys']}" name="keys" class="form-control" size="15" />
+      <button type="submit" class="btn-default" data-icon="search">查询</button>
+      <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a>
+      
+    </div> 
+     <div class="pull-right">
+         <span <php>echo display(CONTROLLER_NAME.'/add');</php> >
+             <a href="__URL__/add/navTabId/{:CONTROLLER_NAME}" class="btn btn-green" data-toggle="dialog" data-width="600" data-height="210" data-id="dialog-mask" data-mask="true" data-icon="plus">添加类型</a>
+         </span>
+     </div>
+  </form>
+
+</div>
+<div class="bjui-pageContent tableContent">
+  <table class="table table-bordered table-hover table-striped table-top" data-selected-multi="true" data-toggle="tablefixed">
+    <thead>
+      <tr>
+        <th align="center" width="60" height="30" align="center" data-order-direction="desc" data-order-field="id">编号</th>
+        <th align="center" data-order-direction="desc" data-order-field="type_name"> 类别名称</th>
+        <th align="center">编辑</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <volist id="v" name="list">
+        <tr>
+          <td align="center">{$v.id}</td>
+          <td align="center">{$v.type_name}</td>
+          <td align="center"> 
+            <span>
+              <a href="__URL__/del/id/{$v['user_id']}/navTabId/users" class="btn btn-red btn-sm" data-toggle="doajax" data-confirm-msg="确定要删除吗？">删除</a>
+            </span> 
+          </td>
+        </tr> 
+      </volist>
+    </tbody>
+  </table>
+
+
+  <div class="bjui-pageFooter">
+    <div class="pages">
+    <span>共 {$totalCount} 条，每页 {$numPerPage} 条</span>
+    </div>
+    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$currentPage}">
+    </div>
+  </div>
+</div>

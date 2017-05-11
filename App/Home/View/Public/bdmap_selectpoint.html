@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	<title>地图</title>
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+		}
+		body, button, input, select, textarea {
+			font: 12px/16px Verdana, Helvetica, Arial, sans-serif;
+		}
+		p{
+			width:603px;
+			padding-top:3px;
+			margin-top:10px;
+			overflow:hidden;
+		}
+		.search{position: absolute; top:0px; right:150px; z-index:99999;}
+		#address{ width: 300px; height: 20px; line-height: 20px; padding: 5px 10px;}
+		.search button{ width: 50px; height: 35px; border-radius: 5px; background: #fff; line-height: 20px; border: 1px solid #ddd;}
+		#container {
+			min-width:603px;
+			min-height:300px;
+		}
+	</style>
+	<script charset="utf-8" src="/Public/BJUI/js/jquery-1.7.2.min.js"></script>
+	<script charset="utf-8" src="http://map.qq.com/api/js?v=2.exp"></script>
+	<script>
+		var geocoder,map,marker = null;
+		var init = function() {
+			var center = new qq.maps.LatLng(34.78584480154831, 113.73091399669647);
+			map = new qq.maps.Map(document.getElementById('container'),{
+				center: center,
+				zoom: 18
+			});
+
+			qq.maps.event.addListener(map, 'click', function(event) {
+				var marker=new qq.maps.Marker({
+					position:event.latLng, 
+					map:map
+				});    
+				qq.maps.event.addListener(map, 'click', function(event) {
+					marker.setMap(null);      
+				});
+
+				var address = document.getElementById("address").value;
+				$(window.parent.document).find("#addres").val(address);
+				$(window.parent.document).find("#addres").show();
+				$(window.parent.document).find("#position").val(event.latLng.getLat() + ', ' + event.latLng.getLng());
+				$(window.parent.document).find("#lng").val(event.latLng.getLng());
+				$(window.parent.document).find("#lat").val(event.latLng.getLat());
+				$(window.parent.document).find("#position").show();
+
+				$(window.parent.document).find("#addrestr").hide();
+				$(window.parent.document).find("#positiontr").hide();
+
+			});
+
+			geocoder = new qq.maps.Geocoder({
+				complete : function(result){
+					map.setCenter(result.detail.location);
+					var marker = new qq.maps.Marker({
+						map:map,
+						//position: result.detail.location
+						position: null
+					});
+				}
+			});
+		}
+
+		function codeAddress() {
+			//var address = getUrlParam('address');
+			var address = document.getElementById("address").value;
+			geocoder.getLocation( address );
+		}
+
+		function adr_init(){
+			var ad = $(window.parent.document).find("#addres").val();
+			if(ad.length>0){
+				$("#address").val(ad);
+				$("#adbtn").trigger("click");
+			}
+		}
+		
+	</script>
+</head>
+<body onload="init();adr_init();">
+	<div class="search">
+		<input id="address" type="textbox" value="" placeholder="请输入地址点击搜索进行定位"><button id="adbtn" onclick="codeAddress()" >搜索</button>
+	</div>
+	<div id="container"></div>
+</body>
+</html>

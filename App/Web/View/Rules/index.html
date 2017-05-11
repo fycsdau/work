@@ -1,0 +1,50 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon am-icon-home"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <img src="__PUBLIC__/images/rules.jpg" class="am-img-responsive">
+
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+            <h2 class="am-titlebar-title ">{$page_title}</h2>
+        </div>
+
+        <div class="am-list-news-bd">
+            <ul class="am-list">
+                <volist name="list" id="list">
+                    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-right">
+                        <h3 class="am-list-item-hd">
+                            <a href="/index.php/rules/view/id/{$list.id}/" class="">
+                                {$list.title}
+                            </a>
+                        </h3>
+
+                        <div class="<if condition="$list.toppic neq ''">am-u-sm-8</if> am-list-main">
+                            <div class="am-list-item-text">{$list.desc}</div>
+                        </div>
+                        <if condition="$list.toppic neq ''">
+                            <div class="am-list-thumb am-u-sm-4">
+                                <a href="/index.php/rules/view/id/{$list.id}/" class="">
+                                    <img src="{$list.toppic}" alt="{$list.title}"/>
+                                </a>
+                            </div>
+                        </if>
+                    </li>
+                </volist>
+            </ul>
+
+            {$loadmore}
+
+        </div>
+    </div>
+
+    <include file="Public/foot" />

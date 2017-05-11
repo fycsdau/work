@@ -1,0 +1,48 @@
+<!--menu-->
+<php> $cate=M('menu')->where('level=0')->order('sort')->select();</php>
+<foreach name="cate" item="c">
+    <if condition="authcheck('Home/'.$c[alink],session('uid'))">
+        <if condition="$c.sort EQ 0 ">
+            <div class="panel panel-default">
+                <div class="panel-heading panelContent">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#bjui-accordionmenu" href="#bjui-collapse{$c.sort}" class="active"><i class="fa fa-caret-square-o-down"></i>&nbsp;{$c.catename}</a></h4>
+                </div>
+                <div id="bjui-collapse{$c.sort}" class="panel-collapse panelContent collapse in">
+                    <div class="panel-body" >
+                        <ul id="bjui-tree{$c.id}" class="ztree ztree_main" data-toggle="ztree" data-on-click="MainMenuClick" data-expand-all="true">
+        <else/>
+            <div class="panel panel-default">
+                <div class="panel-heading panelContent">
+                    <h4 class="panel-title"><a data-toggle="collapse" data-parent="#bjui-accordionmenu" href="#bjui-collapse{$c.sort}" class="" ><i class="fa fa-caret-square-o-right"></i>&nbsp;{$c.catename}</a></h4>
+                </div>
+            <div id="bjui-collapse{$c.sort}" class="panel-collapse panelContent collapse">
+                <div class="panel-body">
+                    <ul id="bjui-tree{$c.id}" class="ztree ztree_main" data-toggle="ztree" data-on-click="MainMenuClick" data-expand-all="false">
+        </if>
+
+        <php> $cate1=M('menu')->where('level=1 and pid='.$c['id'])->order('sort')->select();</php>
+            <foreach name="cate1" item="v">
+                <if condition="authcheck('Home/'.$v[alink],session('uid'))">
+                    <php>$count1=M('menu')->where('level=2 and pid='.$v['id'])->count(id);</php>
+                        <if condition="$count1 EQ 0 ">
+                            <li data-id="{$v.id}" data-pid="{$c.id}" data-url="/index.php/home/{$v.alink}" data-tabid="{$v.alink}">{$v.catename}</li>
+                        <else/>
+                            <li data-id="{$v.id}" data-pid="{$c.id}" >{$v.catename}</li>
+                        </if>
+
+                        <php> $cate2=M('menu')->where('level=2 and pid='.$v['id'])->order('sort')->select();</php>
+                        <foreach name="cate2" item="vv">
+                            <if condition="authcheck('Home/'.$vv[alink],session('uid'))">
+                                <li data-id="{$vv.id}" data-pid="{$v.id}" data-url="/index.php/home/{$vv.alink}" data-reload-warn="需要刷新本标签吗?" data-tabid="{$vv.alink}">{$vv.catename}</li>
+                            </if>
+                        </foreach>
+                </if>
+            </foreach>
+                    </ul>
+                </div>
+            </div>
+        <div class="panelFooter"><div class="panelFooterContent"></div></div>
+    </div>
+    </if>
+</foreach>
+<!--menu-->

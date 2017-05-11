@@ -1,0 +1,94 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon am-icon-home"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <img src="__PUBLIC__/images/Dealerships.jpg" class="am-img-responsive">
+
+    <!--开奖-->
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+            <h2 class="am-titlebar-title ">{$page_title}</h2>
+            <nav class="am-titlebar-nav">
+                <a href="/index.php/dealerships/" class="">网点列表</a>
+            </nav>
+        </div>
+        <div class="am-list-news-bd">
+            <ul class="am-list am-list-static am-list-border am-list-striped" id="loadlist">
+                <div style="width:100%; padding:20px 0px; text-align:center">
+                <br><i class="am-icon-spinner am-icon-pulse am-icon-md"></i><br><br>
+                正在获取您当前的位置
+                </div>
+            </ul>
+
+
+        </div>
+    </div>
+    <!--开奖-->
+
+    <include file="Public/foot" />
+
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+    pageload('',1,1,0);
+        wx.config({
+            appId: '{$signPackage.appId}',
+            timestamp: {$signPackage.timestamp},
+            nonceStr: '{$signPackage.nonceStr}',
+            signature: '{$signPackage.signature}',
+            jsApiList: [
+            'checkJsApi',
+            'openLocation',
+            'getLocation'
+            ]
+        });      
+        wx.ready(function () {
+            wx.getLocation({
+                type: 'gcj02',
+                success: function (res) {
+                    var latitude = res.latitude;
+                    var longitude = res.longitude;
+                    var speed = res.speed;
+                    var accuracy = res.accuracy;
+                    $("#loadlist").load("/index.php/dealerships/near/latitude/"+ latitude +"/longitude/"+longitude);
+                }
+            });
+        });
+
+        function mapinit(){
+            $(".mapview").on("click",function(){
+                var lat = $(this).attr("data-lat");
+                var lng = $(this).attr("data-lng");
+                var title = $(this).attr("data-title");
+                var addres = $(this).attr("data-addres");
+                if(lat && lng){
+                    lat = Number(lat);
+                    lng = Number(lng);
+                    title = String(title);
+                    addres = String(addres);
+                    console.log("lat:"+ lat +"  |  lng:"+ lng +"  | title:"+title+"  | addres:"+addres);
+                    
+                    wx.openLocation({
+                        latitude: lat,
+                        longitude: lng,
+                        name: title,
+                        address: addres,
+                        scale: 28,
+                        infoUrl: ''
+                    });
+                }
+            })
+        }
+
+        function mappage(lat, lng, p){
+            $("#loadlist").load("/index.php/dealerships/near/latitude/"+lat+"/longitude/"+lng +"/p/"+p);
+        }
+    </script>

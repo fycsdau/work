@@ -1,0 +1,61 @@
+<include file="Public/head" />
+
+<body>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}">
+        <div class="am-header-left am-header-nav">
+            <a href="/" class="">
+                <i class="am-header-icon am-icon-home"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+    </header>
+
+    <img src="__PUBLIC__/images/Dealerships.jpg" class="am-img-responsive">
+
+    <!--开奖-->
+    <div data-am-widget="list_news" class="am-list-news am-list-news-default" >
+        <div data-am-widget="titlebar" class="am-titlebar am-titlebar-default" >
+            <h2 class="am-titlebar-title ">网点列表{$statusname}</h2>
+            <nav class="am-titlebar-nav">
+                {$verif_count}
+            </nav>
+        </div>
+        <div class="am-list-news-bd">
+            <ul class="am-list am-list-static am-list-border am-list-striped">
+
+                <volist name="list" id="list">
+                    <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-right">
+                        <a href="/index.php/Dealerships/view/id/{$list.id}/">
+                            <div class="am-list-item-hd am-text-danger"><strong>{$list.title}</strong></div>
+                            <div class="am-list-main">
+                                {$list.addres}<br>
+                                <if condition="$list.tel neq ''">
+                                    {$list.tel} / 
+                                </if>
+                                <if condition="$list.phone neq ''">
+                                    {$list.phone}
+                                </if>
+                                <if condition="$list.content neq ''">
+                                    <br>{$list.content}
+                                </if>
+                                <hr style="margin:1rem 0rem;">
+                                <if condition="$list.status eq 1">
+                                    认证于{$list.verifdate}
+                                    <else />
+                                    <font color="red">待认证</font>
+                                </if>
+                            </div>
+                        </a>
+                    </li>
+                </volist>
+
+            </ul>
+
+            {$loadmore}
+
+        </div>
+    </div>
+    <!--开奖-->
+
+    <include file="Public/foot" />

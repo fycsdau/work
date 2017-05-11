@@ -1,0 +1,39 @@
+<div class="bjui-pageContent">
+  <form action="__URL__/edit/navTabId/help" class="pageForm" data-toggle="validate">
+    <input type="hidden" name="id" value="{$id}">
+    <div class="pageFormContent" data-layout-h="0">
+      <table class="table table-condensed table-hover" width="100%">
+        <tbody>
+          <tr>
+            <td width="120" align="right">
+              <label for='title' class='control-label'>标题:</label>
+            </td>
+            <td>
+              <input type='text' id='title' name='title' data-rule='required;' size='20' value='{$Rs.title}'  >
+            </td>
+          </tr>
+          <tr>
+            <td valign="top" align="right">
+              <label for='title_input' class='control-label'>内容:</label>
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div style='display: inline-block; vertical-align: middle;'>
+                <textarea name='content' data-toggle='kindeditor' data-minheight='150' data-width='100%' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'>{$Rs.content}</textarea>
+              </div>
+            </td>
+          </tr> 
+        </tbody>
+      </table>
+    </div>
+  </form>
+</div>
+
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+  </ul>
+</div>

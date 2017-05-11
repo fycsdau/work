@@ -1,0 +1,32 @@
+[ 2017-04-24T10:34:51+08:00 ] ::1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: Run Behavior\CronRunBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `work_config` [ RunTime:0.0340s ]
+SQL: SELECT `type`,`name`,`value` FROM `work_config`  [ RunTime:0.0320s ]
+NOTIC: [8] A session had already been started - ignoring session_start() C:\Users\jk\Desktop\work\App\Pcshow\Controller\CommonController.class.php 第 16 行.
+NOTIC: [8] Undefined index: user_id C:\Users\jk\Desktop\work\App\Pcshow\Controller\CommonController.class.php 第 462 行.
+NOTIC: [8] Undefined variable: user_info C:\Users\jk\Desktop\work\App\Pcshow\Controller\CommonController.class.php 第 469 行.
+NOTIC: [8] Undefined index: user_id C:\Users\jk\Desktop\work\App\Pcshow\Controller\CommonController.class.php 第 75 行.
+NOTIC: [8] Undefined index: user_auth C:\Users\jk\Desktop\work\App\Pcshow\Controller\CommonController.class.php 第 76 行.
+SQL: SHOW COLUMNS FROM `work_job` [ RunTime:0.0340s ]
+SQL: SELECT * FROM `work_job` WHERE `status` = 1 LIMIT 8   [ RunTime:0.0340s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: username C:\Users\jk\Desktop\work\App\Runtime\Cache\Pcshow\49d3a3090f14dd6996055bcb46eacd1b.php 第 27 行.
+NOTIC: [8] Undefined index: username C:\Users\jk\Desktop\work\App\Runtime\Cache\Pcshow\49d3a3090f14dd6996055bcb46eacd1b.php 第 132 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.032002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.032002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+

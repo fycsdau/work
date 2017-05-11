@@ -1,0 +1,65 @@
+<include file="Public/head" />
+
+<body>
+    <header class="page-header">
+        <i class="header-left icon-func user-icon-fanhui"></i>
+        <div class="header-title">用户信息</div>
+    </header>
+    <section class="container">
+        <section class="member">
+            <div class="member-header">
+                <div class="mask"></div>
+                <div class="member-info">
+                    <div class="member-name">{$userinfo.nickname}</div>
+                    <div>会员ID：{$userinfo.user_id}</div>
+                    <div>级别：会员</div>
+                </div>
+                <div class="member-avatar" style="top:2rem; bottom:0rem;"><img src="{$userinfo.headimgurl}" alt=""></div>
+            </div>
+        </section>
+        <section>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <div class="section-box">
+                            <div class="form-key">手机号码</div>
+                            <div class="section-box-item">{$userinfo.phone}</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <div class="section-box">
+                            <div class="form-key">电子邮箱</div>
+                            <div class="section-box-item">{$userinfo.email}</div>
+                        </div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <div class="section-box">
+                            <div class="form-key">性别</div>
+                            <div class="section-box-item">
+                                {$userinfo['sex']?'男':'女'}
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a class="mui-navigate-right">
+                        <div class="section-box">
+                            <div class="form-key">生日</div>
+                            <div class="section-box-item">{$userinfo.birthday}</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <section class="mui-content-padded form-op-section">
+            <a href="member_infoedit/id/{$userinfo['user_idd']}" type="button" class="mui-btn mui-btn-block mui-btn-success btn-action" onclick="$(this.form).submit();">修改我的信息</a>
+        </section>
+    </section>
+    <script type="text/javascript">var navid =2;</script>
+    <include file="Public/foot" />
+</body>
+</html>

@@ -1,0 +1,66 @@
+<div class="bjui-pageContent">
+  <div class="pageFormContent" data-layout-h="0">
+    <table class="table table-condensed table-view table-hover" width="100%">
+      <tbody>
+        <tr>
+          <td align="right" class="td1">
+            <label for='phone' class='control-label'>所属中心:</label>
+          </td>
+          <td colspan="3" class="td3">{$Rs.parentid|getparentname}</td>
+        </tr>
+        <tr>
+          <td width="15%" align="right" class="td1">
+            <label for='title' class='control-label'>网点名称:</label>
+          </td>
+          <td class="td2">{$Rs.title}</td>
+          <td width="15%" align="right" class="td1">
+            <label for='person' class='control-label'>业主姓名:</label>
+          </td>
+          <td class="td3">{$Rs.person}</td>
+        </tr>
+        <tr>
+          <td align="right" class="td1">
+            <label for='phone' class='control-label'>固定电话:</label>
+          </td>
+          <td class="td2">{$Rs.tel}</td>
+          <td align="right" class="td1">
+            <label for='phone' class='control-label'>手机号码:</label>
+          </td>
+          <td class="td3">{$Rs.phone}</td>
+        </tr>
+        <tr>
+          <td valign="top" align="right" class="td1">
+            <label for='addres' class='control-label'>网点地址:</label>
+          </td>
+          <td colspan="3" class="td3">{$Rs.addres}</td>
+        </tr>
+        <tr>
+          <td align="right" class="td1">
+            <label for='phone' class='control-label'>认证状态:</label>
+          </td>
+          <td class="td2">{$Rs.status|getstatusname}</td>
+          <td align="right" class="verif_date td1">
+            <label for='verifdate' class='control-label'>认证时间:</label>
+          </td>
+          <td class="verif_date td3">{$Rs.verifdate}</td>
+        </tr>
+        <tr>
+          <td align="right" class="td1">
+            <label for='content' class='control-label'>网点介绍:</label>
+          </td>
+          <td colspan="3" class="td3">{$Rs.content}</td>
+        </tr>
+        <tr>
+          <td align="right"></td>
+          <td colspan="3"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">关闭</button></li>
+  </ul>
+</div>

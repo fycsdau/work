@@ -1,0 +1,6 @@
+[ 2016-04-15T12:13:07+08:00 ] ::1 /admin.php/test?%3C?xml%20version=%221.0%22%20encoding=%22utf8%22%20?%3E%3Corderinfo%3E%3Cmsg%3Ehahahahaha%3C/msg%3E%3Creqcode%3E9%3C/reqcode%3E%3C/orderinfo%3E
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+ERR: 无法加载模块:Test
+

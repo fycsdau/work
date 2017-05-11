@@ -1,0 +1,158 @@
+<include file="Public/head" />
+
+<body>
+    <header class="page-header">
+        <i class="header-left icon-func user-icon-fanhui"></i>
+        <div class="header-title">提现</div>
+    </header>
+    <section class="container" style="margin:0px 0px 100px 0px">
+        <form>
+            <section class="mui-input-group">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <div class="section-box">
+                            <div class="section-box-item withdrawal-amount-key">
+                                可提现金额(元)
+                            </div>
+                            <div class="section-box-item withdrawal-amount">
+                                ¥ <span>{$userinfo['user_money']|default='0.00'}</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <div class="section-box">
+                            <div class="section-box-item withdrawal-amount-key">
+                                已冻结金额(元)
+                            </div>
+                            <div class="section-box-item withdrawal-amount">
+                                ¥ <span>{$userinfo['frozen_money']|default='0.00'}</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="mui-input-group">
+                
+                <div id="showUserPicker" class="mui-input-row">
+                    <label>提现银行：</label>
+                    
+                    <eq name="banknum" value="0">
+                        <input onclick="window.location.href='addcard';" type="text"  placeholder="请先添加提现银行卡" style="ime-mode:disabled">
+                        <else/>
+                        <div class="section-box" style="padding:10px 0px;">
+                            <div class="section-box-item withdrawal-amount-key withdrawal-bank">
+                                <div class="cards-account-name">{$bank[0]['bankusername']}</div>
+                                <div class="cards-account-info">
+                                    {$bank[0]['bankname']}<br>
+                                    {$bank[0]['bankcode']}
+                                </div>
+                            </div>
+                        </div>
+
+                    </eq>
+
+                    <input type="hidden" name="bank_id" id="userResult" value="{$bank[0]['bank_id']}">
+                </div>
+
+                <ul class="mui-table-view cards-list" style="display:none;">
+                    <volist id="v" name="bank">
+                        <div id="showUserPicker" class="mui-input-row" bankid="{$v['bank_id']}">
+                            <li class="mui-table-view-cell">
+                                <div class="section-box">
+                                    <i class="{$v['bankico']}"></i>
+                                    <div class="section-box-item">
+                                        <div class="cards-account-name">{$v['bankusername']}</div>
+                                        <div class="cards-account-info">
+                                            {$v['bankname']}<br>
+                                            {$v['bankcode']}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </div>
+                    </volist>
+                </ul>
+
+                <div class="mui-input-row">
+                    <label>提现金额(元)：</label>
+                    <input type="number" name="money" id="money" class="mui-input-clear" placeholder="您最多可以提现 {$userinfo['user_money']} 元">
+                </div>
+
+            </section>
+            <section class="section-tips">
+                由于银行跨省跨行都会产生手续费，提现将按照5元/笔扣除汇款手续费！每笔申请也不能低于50元！
+            </section>
+            <div id="msg"></div>
+            <section class="mui-content-padded form-op-section">
+                <button type="button" class="mui-btn mui-btn-block mui-btn-success btn-action withdrawal_submit">提交申请</button>
+            </section>
+        </form>
+    </section>
+    <script type="text/javascript">var navid =2;</script>
+    <include file="Public/foot" />
+    <script type="text/javascript">
+        $("#money").on("keyup",function(){
+            if( $("#money").val() > {$userinfo['user_money']} ){
+                $("#money").val("{$userinfo['user_money']}");
+            }
+        })
+
+        $(".withdrawal-bank").click(function(){
+            $(".cards-list").toggle();
+        });
+
+        $(".cards-list .mui-input-row").click(function(){
+            var bank_info = $(this).find('.section-box-item').html();
+            var bank_id = $(this).attr("bankid");
+            $("#userResult").val(bank_id);
+            $(".withdrawal-bank").html(bank_info);
+            $(".cards-list").toggle();
+        })
+
+        $(".withdrawal_submit").click(function(){
+            if($("#money").val()==''){
+                mui.alert('请填写要提现的金额', 'Error');
+                $("#money").focus();
+                return false;
+            }
+            if($("#money").val()<=50){
+                mui.alert('每笔申请不能低于50元哦～', 'Error');
+                $("#money").focus();
+                return false;
+            }
+
+            $("。withdrawal_submit").hide();
+            $("#msg").html("正在提交...");
+            $.ajax({
+                type: "post",
+                cache:false,
+                data: {bank_id:$("#userResult").val(), money:$("#money").val()},
+                url: "__SELF__",
+                timeout: 20000,
+                error: function(){
+                    mui.alert('服务器故障，请联系管理员处理', 'Error');
+                },
+                success: function(t){
+                    if(t=='success'){
+                        window.location.href="/index.php/user/record";
+                    }else{
+                        alert(t);
+                        $(".withdrawal_submit").show();
+                        $("#msg").html("");
+                    }
+                }
+            });
+
+        })
+
+        <eq name="banknum" value="0">
+            var btnArray = ['是', '否'];
+            mui.confirm('未设置提现银行卡信息，是否现在去设置？', '提现银行卡设置提醒', btnArray, function(e) {
+                if (e.index == 0) {
+                    window.location.href="addcard";
+                }
+            })
+        </eq>
+    </script>
+</body>
+</html>

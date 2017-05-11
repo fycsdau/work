@@ -1,0 +1,394 @@
+[ 2016-01-13T21:46:40+08:00 ] ::1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000057s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002008s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002097s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+SQL: SELECT * FROM `lthn_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0005s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000097s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000172s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lthn_user` WHERE `update_time` > 1452692200 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=0 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=1 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=77 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=77 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=78 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=78 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=79 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=79 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=80 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=80 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=105 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=105 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=81 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=82 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=82 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=83 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=83 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=84 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=85 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=85 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=86 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=86 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=87 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=87 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=14 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=14 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=104 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=104 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=88 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=89 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=89 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=90 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=90 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=91 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=91 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=92 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=93 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=93 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=94 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=94 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=95 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=96 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=96 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=103 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=103 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=97 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=97 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=98 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=98 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=99 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=99 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=100 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=101 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=101 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=102 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=102 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=7 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=74 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=74 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=22 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=22 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'letouhenan.lthn_mygo' doesn't exist
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-01-13T21:46:43+08:00 ] ::1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000448s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+SQL: SELECT * FROM `lthn_user` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000081s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lthn_user` WHERE `update_time` > 1452692203 LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=0 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=1 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=77 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=77 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=78 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=78 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=79 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=79 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=80 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=80 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=105 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=105 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=81 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=82 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=82 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=83 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=83 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=84 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=85 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=85 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=86 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=86 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=87 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=87 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=14 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=14 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=104 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=104 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=88 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=89 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=89 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=90 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=90 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=91 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=91 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=92 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=93 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=93 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=94 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=94 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=95 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=96 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=96 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=103 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=103 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=97 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=97 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=98 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=98 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=99 ) LIMIT 1   [ RunTime:0.0001s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=99 ) ORDER BY sort  [ RunTime:0.0001s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=100 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=101 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=101 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=102 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=102 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=1 and pid=7 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=74 ) LIMIT 1   [ RunTime:0.0002s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=74 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+NOTIC: [8] Use of undefined constant id - assumed 'id' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 173 行.
+SQL: SELECT COUNT(id) AS tp_count FROM `lthn_menu` WHERE ( level=2 and pid=22 ) LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=2 and pid=22 ) ORDER BY sort  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 178 行.
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'letouhenan.lthn_mygo' doesn't exist
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-01-13T21:47:06+08:00 ] ::1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000457s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000575s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+SQL: SELECT * FROM `lthn_user` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000076s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000139s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lthn_user` WHERE `update_time` > 1452692226 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=0 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SHOW COLUMNS FROM `lthn_auth_group_access` [ RunTime:0.0021s ]
+SQL: SELECT `rules` FROM lthn_auth_group_access a INNER JOIN lthn_auth_group g on a.group_id=g.id  WHERE ( a.uid='' and g.status='1' )  [ RunTime:0.0013s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'letouhenan.lthn_mygo' doesn't exist
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-01-13T21:47:07+08:00 ] ::1 /admin.php
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+SQL: SELECT * FROM `lthn_user` LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000082s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000153s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `lthn_user` WHERE `update_time` > 1452692227 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `lthn_menu` WHERE ( level=0 ) ORDER BY sort  [ RunTime:0.0003s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+SQL: SHOW COLUMNS FROM `lthn_auth_group_access` [ RunTime:0.0011s ]
+SQL: SELECT `rules` FROM lthn_auth_group_access a INNER JOIN lthn_auth_group g on a.group_id=g.id  WHERE ( a.uid='' and g.status='1' )  [ RunTime:0.0002s ]
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+NOTIC: [8] Use of undefined constant alink - assumed 'alink' /Applications/MAMP/htdocs/App/Runtime/Cache/Admin/9df924d9a2d217daa77a359c5bee0c33.php 第 157 行.
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'letouhenan.lthn_mygo' doesn't exist
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 229 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/Think.class.php 第 230 行.
+
+[ 2016-01-13T21:47:26+08:00 ] ::1 /index.php/admin/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000474s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001354s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008315s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000199s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000528s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000585s ]
+
+[ 2016-01-13T21:47:29+08:00 ] ::1 /index.php/admin/Public/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000708s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000639s ]
+NOTIC: [2] session_start(): Cannot send session cache limiter - headers already sent (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Common/functions.php 第 1231 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008040s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008104s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000190s ]
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/View.class.php 第 91 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/View.class.php 第 92 行.
+NOTIC: [2] Cannot modify header information - headers already sent by (output started at /Applications/MAMP/htdocs/App/Common/Conf/web.php:1) /Applications/MAMP/htdocs/Core/Library/Think/View.class.php 第 93 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000515s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000567s ]
+

@@ -1,0 +1,67 @@
+<php>
+    $cate=M('menu')->where('level=0 and status=1')->order('sort')->select();
+</php>
+<foreach name="cate" item="c">
+    <if condition="authcheck('Home/'.$c[alink],session('uid'))">
+        <div class="panel panel-default collapse in">    
+            <div class="panel-heading">        
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#bjui-accordionmenu" href="#bjui-collapse{$c.id}" class="collapsed">
+                    <i class="fa {$c.cate_icon}"></i>&nbsp;<span style="font-size:15px;">{$c.catename}</span>
+                        <b><i class="fa fa-angle-down"></i></b>
+                    </a>
+                </h4>    
+            </div>
+            <div id="bjui-collapse{$c.id}" class="panel-collapse collapse" style="height: 0px;">        
+                <div class="panel-body">        
+                    <ul class="menu-items" data-faicon="hand-o-up">
+                        <php>
+                            $cate1=M('menu')->where('level=1 and status=1 and pid='.$c['id'])->order('sort')->select();
+                        </php>
+                        <foreach name="cate1" item="v">
+                            <if condition="authcheck('Home/'.$v[alink],session('uid'))">
+                                <php>
+                                    $pid = $v['id'];
+                                    $child_menu=M('menu')->where("level=2 and status=1 and pid='$pid'")->count(id);
+                                </php>
+                                <if condition="$child_menu EQ 0 ">
+                                    <li>
+                                        <a href="/admin.php/home/{$v.alink}" data-toggle="navtab" data-options="{id:'{$v.cate_navtabid}'}" title="{$v.catename}">
+                                            <i class="fa {$v.cate_icon}"></i>
+                                            {$v.catename}
+                                        </a>
+                                    </li>
+
+                                    <else/>
+                                    
+                                    <li class="switch">
+                                        <a style="cursor: pointer;" data-toggle="navtab" data-options="{id:'{$v.cate_navtabid}'}" title="{$v.catename}">
+                                            <i class="fa {$v.cate_icon}"></i>
+                                            {$v.catename}
+                                        </a>
+                                        <b><i class="fa fa-angle-down"></i></b>
+                                        <ul class="menu-items-children">
+                                            <php>
+                                                $cate2=M('menu')->where('level=2 and status=1 and pid='.$v['id'])->order('sort')->select();
+                                            </php>
+                                            <foreach name="cate2" item="vv">
+                                                <if condition="authcheck('Home/'.$vv[alink],session('uid'))">
+                                                    <li>
+                                                        <a href="/admin.php/home/{$vv.alink}" data-toggle="navtab" data-options="{id:'{$vv.cate_navtabid}'}" title="{$vv.catename}">
+                                                            <i class="fa {$vv.cate_icon}"></i>
+                                                            {$vv.catename}
+                                                        </a>
+                                                    </li>
+                                                </if>
+                                            </foreach>
+                                        </ul>
+                                    </li>
+                                </if>
+                            </if>
+                        </foreach>
+                    </ul>
+                </div>    
+            </div>
+        </div>
+    </if>
+</foreach>

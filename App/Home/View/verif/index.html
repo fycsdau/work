@@ -1,0 +1,70 @@
+<div class="bjui-pageHeader">
+  <form id="pagerForm" data-toggle="ajaxsearch" action="__URL__" method="post">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+
+    <div class="bjui-searchBar">
+      <label>券号：</label>
+      <input type="text" value="{$_REQUEST['tickets']}" name="tickets" class="form-control" size="15" />
+
+      <select name="prize" id="prize" data-toggle="selectpicker">
+        <option value='0'> 奖品名称 </option>
+        <volist name="prize" id="item">
+          <option value="{$item.id}"
+          <eq name="item.id" value="$_REQUEST['prize']">selected</eq>
+          >{$item.title}</option>
+        </volist>
+      </select>
+
+      <select name="status" id="status" data-toggle="selectpicker">
+        <option value='-1'> 核验状态 </option>
+        <option value='1'> 已核验 </option>
+        <option value='0'> 未核验 </option>
+      </select>
+
+      <button type="submit"  class="btn-default" data-icon="search">查询</button>
+
+      <div class="pull-right">
+      </div>
+    </div> 
+  </form>
+</div>
+
+<div class="bjui-pageContent tableContent">
+  <table class="table table-bordered table-hover table-striped table-top" data-selected-multi="true" data-toggle="tablefixed">
+    <thead>
+      <tr>
+        <th width="50" height="30" align="center" data-order-direction='desc' data-order-field='id'>ID</th>
+        <th align="center">奖品名称</th>
+        <th align="center">券号</th>
+        <th align="center">密码</th>
+        <th align="center">核验状态</th>
+        <th align="center">核验用户</th>
+        <th align="center">核验时间</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <volist id="v" name="list">
+        <tr>
+          <td align="center">{$v.id}</td>
+          <td>{$v.prize_id|getprizename}</td>
+          <td align="center">{$v.tickets}</td>
+          <td align="center">{$v.code}</td>
+          <td align="center">{$v['status'] ? '<font color="green">已核验</font>' : '<font color="red">未核验</font>'}</td>
+          <td align="center">{$v.user_name}</td>
+          <td align="center">{$v.adddate}</td>
+        </td>
+      </tr> 
+    </volist>
+  </tbody>
+</table>
+</div>
+
+<div class="bjui-pageFooter">
+  <div class="pages">
+    <span>共 {$totalCount} 条  每页 {$numPerPage} 条</span>
+  </div>
+  <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$currentPage}">
+  </div>
+</div>

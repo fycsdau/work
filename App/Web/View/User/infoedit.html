@@ -1,0 +1,142 @@
+<include file="Public/head" />
+
+<body style="background:url(__PUBLIC__/Amazeui/i/5-13050GTF7.png)">
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}" style="z-index: 9;">
+        <div class="am-header-left am-header-nav">
+            <a href="/index.php/" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+        <div class="am-header-right am-header-nav">
+            <a href="" class="">
+                <i class="am-header-icon am-icon-pencil-square-o"></i>
+                修改
+            </a>
+        </div>
+
+    </header>
+
+    <!--内容显示-->
+    <div>
+        <img src="{$userinfo.headimgurl}" class="am-img-responsive am-img-thumbnail am-circle" style="width:50%; margin:20px auto 10px auto;">
+        <h1 style="margin:0px; text-align:center;">{$userinfo.user_name}</h1>
+        <div>{$userinfo.user_auth|getdepname}</div>
+    </div>
+    <style type="text/css">
+        .am-list li{padding-left:3rem;padding-right:3rem; line-height: 32px;}
+    </style>
+    <form action="__SELF__" id="userinfo_from" method="post" class="am-form">
+        <input type="hidden" name="id" value="{$userinfo.id}">
+        <ul class="am-list am-list-static am-list-striped">
+            <li>
+                <div class="am-cf">
+                    <span class=" am-fl">真实姓名: </span>
+                    <span class="am-fr">
+                        <input type="text" size="11" name="user_name" value="{$userinfo.user_name}">
+                    </span>
+                </div>
+            </li>
+            <li>
+                <div class="am-cf">
+                    <span class=" am-fl">手机号码: </span>
+                    <span class="am-fr">
+                        <input type="text" size="11" id="user_phone" name="user_phone" value="{$userinfo.user_phone}">
+                        <input type="hidden" size="11" id="user_phone_old" name="user_phone_old" value="{$userinfo.user_phone}">
+                    </span>
+                </div>
+            </li>
+            <li class="am-form-group">
+                <div class="am-cf">
+                    <span class=" am-fl">我的性别: </span>
+                    <span class="am-fr">
+                        <select name="sex" data-am-selected="{maxHeight: 200, btnWidth: 132, btnSize: 'sm'}">
+                            <option value="1" <if condition="$userinfo.sex EQ 1 ">selected</if>>男</option>
+                            <option value="2"<if condition="$userinfo.sex EQ 2 ">selected</if>>女</option>
+                        </select>
+                    </span>
+                </div>
+            </li>
+            <li>
+                <div class="am-cf">
+                    <span class="am-fl">常住城市: </span>
+                    <span class="am-fr">
+                        <select id="active_area" data-am-selected="{maxHeight: 200, btnWidth: 132, btnSize: 'sm'}" name="user_city">
+                            <option value="0" <if condition="$userinfo.user_city EQ 0 ">selected</if>>所在城市</option>
+                            <foreach name="orglist" item="v">
+                                <option value="{$v.id}" <if condition="$v.id eq $userinfo['user_city']">selected</if> >
+                                    <php>echo str_replace("体彩分中心","",$v['title']);</php>
+                                </option>
+                            </foreach>
+                        </select>
+                    </span>
+                </div>
+            </li>
+            
+            <li></li>
+
+            <li class="verifcode" style="padding-left:1rem; padding-right:1rem; display:none;">
+                <label>请输入您手机上收到的验证码</label>
+                <input type="text" name="verif_code" id="verifcode" class="am-form-field" placeholder="请输入验证码" style="width:60%; float:left;">
+                <a class="am-btn am-btn-default" onclick="sendsms('sendagain');" id="sendagain" style="width:40%; float:left;">发送验证码</a>
+                <div id="msg" class="am-text-danger am-text-sm"></div>
+                <div style="clear:both"></div>
+            </li>
+            
+            <li>
+                <button type="button" onclick="return check_userinfo();" class="am-btn am-btn-primary am-radius am-btn-block am-btn-secondary">提交修改资料</button>
+            </li>
+        </ul>
+    </form>
+    <!--内容显示-->
+    <script type="text/javascript">
+        function check_userinfo(){
+            var user_phone = $("#user_phone").val();
+            var user_phone_old = $("#user_phone_old").val();
+            var verifcode = $("#verifcode").val();
+            if(verifcode.length<=0){
+                if(user_phone!=user_phone_old && verifcode.length<=0){
+                    //弹出验证码输入框
+                    $(".verifcode").show();
+                    //sendsms('sendagain');
+                    return false;
+                }
+            }
+            $("#userinfo_from").submit();
+        }
+
+        function sendsms(obj){
+            var tel = $("#user_phone").val();
+            settime(obj);
+            $.ajax({
+                type: "get",
+                cache:false,
+                url: "/index.php/sms/sendverifsms/RecNum/"+tel,
+                timeout: 20000,
+                error: function(){ alert("出错了, 请联系管理员处理")},
+                success: function(t){
+                    $('#msg').html(t);
+                }
+            });
+        }
+
+        var countdown=60; 
+        function settime(obj) { 
+            if (countdown == 0) {
+                $("#"+obj).attr('disabled',false);
+                $("#"+obj).html("重新发送");
+                countdown = 60; 
+                return;
+            } else { 
+                $("#"+obj).attr('disabled',true);
+                $("#"+obj).html("重新发送(" + countdown + ")");
+                countdown--; 
+            } 
+            setTimeout(function() { 
+                settime(obj) }
+                ,1000) 
+        }
+    </script>
+
+    <include file="Public/foot" />

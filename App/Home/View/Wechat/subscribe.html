@@ -1,0 +1,149 @@
+<div class="bjui-pageHeader" style="padding:10px 10px;">
+  <label>用户关注后自动推送消息</label>
+</div>
+
+<div class="bjui-pageContent">
+  <form action="__URL__/savesubscribe/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+    <input type="hidden" name="id" value="{$id}">
+    <div class="pageFormContent" data-layout-h="0">
+      <table class="table table-condensed table-hover" width="100%">
+        <tbody>
+          <tr>
+            <td width="160" align="right">
+              <label for='subscribe_msgtype' class='control-label x185'>回复消息类型:</label>
+            </td>
+            <td>
+              <select name="msgtype" id="subscribe_msgtype" data-toggle="selectpicker" onchange="check_msgtype();">
+                <option value="text" <if condition="$subscribe.msgtype EQ 'text' "> selected="selected" </if> >文本消息</option>
+                <option value="newsitems" <if condition="$subscribe.msgtype EQ 'newsitems' "> selected="selected" </if> >图文消息</option>
+              </select>
+            </td>
+          </tr>
+          <tr class="textinputs">
+            <td align="right" valign="top">
+              <label for='appsecret' class='control-label x185'>请填写文本消息内容</label>
+            </td>
+            <td></td>
+          </tr>
+          <tr class="textinputs">
+            <td align="right" valign="top">
+              <label for='text' class='control-label x185'>文本消息内容:</label>
+            </td>
+            <td>
+              <textarea name="text" id="text" style="width:80%;height:200px;">{$subscribe.text}</textarea>
+            </td>
+          </tr>
+          <tr class="newsitemsinputs">
+            <td align="right" valign="top">
+              <label for='appsecret' class='control-label x185'>请填写图文消息内容</label>
+            </td>
+            <td></td>
+          </tr>
+          <php>
+            $newsitem = $subscribe['newsitems'];
+            $newsitems = unserialize($newsitem);
+            $items_title = $newsitems['title'];
+            $items_pic_url = $newsitems['pic_url'];
+            $items_url = $newsitems['url'];
+            for ($i=0; $i < 5; $i++) {
+            if(isset($items_title[$i])){
+            $title = $items_title[$i];
+            $pic_url = $items_pic_url[$i];
+            $url = $items_url[$i];
+          }else{
+          $title = '';
+          $pic_url = '';
+          $url = '';
+        }
+      </php>
+      <!--文章开始-->
+      <tr class="newsitemsinputs">
+        <td align="right" valign="top">
+          <label for='appsecret' class='control-label x185'>文章 {$i+1}</label>
+        </td>
+        <td></td>
+      </tr>
+      <tr class="newsitemsinputs">
+        <td align="right">
+          <label for='items_title{$i}' class='control-label x185'>显示标题:</label>
+        </td>
+        <td>
+          <input type='text' id='items_title{$i}' name='items_title[]' size='40' value="{$title}">
+        </td>
+      </tr>
+      <tr class="newsitemsinputs">
+        <td align="right">
+          <label for='items_pic_url{$i}' class='control-label x185'>图片地址:</label>
+        </td>
+        <td>
+          <input type='text' id='items_pic_url{$i}' name='items_pic_url[]' size='40' value="{$pic_url}">
+          <a class="btn btn-default thumbnail_btn" id="items_pic_url{$i}">上传图片</a>
+        </td>
+      </tr>
+      <tr class="newsitemsinputs">
+        <td align="right">
+          <label for='items_url{$i}' class='control-label x185'>连接地址:</label>
+        </td>
+        <td>
+          <input type='text' id='items_url{$i}' name='items_url[]' size='40' value="{$url}">
+        </td>
+      </tr>
+      <!--文章结束-->
+      <php>
+      }
+    </php>
+    <tr>
+      <td></td>
+      <td>
+
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+</form>
+</div>
+
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+  </ul>
+</div>
+<style type="text/css">
+  <if condition="$subscribe.msgtype EQ 'newsitems'">
+    .textinputs{display: none;}
+    <else/>
+    .newsitemsinputs{display: none;}
+  </if>
+  .newsitemsinputs input{ width: 60%;}
+</style>
+<script type="text/javascript">
+  function check_msgtype(){
+    msgtype = $("#subscribe_msgtype").val();
+    if(msgtype == 'text'){
+      $(".newsitemsinputs").hide();
+      $(".textinputs").show();
+    }else{
+      $(".newsitemsinputs").show();
+      $(".textinputs").hide();
+    }
+  }
+
+  var editor = KindEditor.editor({
+    allowFileManager : true
+  });
+  KindEditor('.thumbnail_btn').click(function() {
+    var toid = $(this).attr('id');
+    editor.loadPlugin('image', function() {
+      editor.plugin.imageDialog({
+        imageUrl : KindEditor('#url1').val(),
+        clickFn : function(url, title, width, height, border, align) {
+          KindEditor('#'+toid).val(url);
+          editor.hideDialog();
+        }
+      });
+    });
+  });
+</script>

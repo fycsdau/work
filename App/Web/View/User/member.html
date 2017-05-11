@@ -1,0 +1,65 @@
+<include file="Public/head" />
+
+<body>
+    <header class="page-header">
+        <div class="header-title">我</div>
+    </header>
+    <section class="container">
+        <section class="member">
+            <div class="member-header">
+                <div class="mask"></div>
+                <div class="member-info">
+                    <div class="member-name">{$userinfo.nickname}</div>
+                    <div>会员ID：{$userinfo.user_id}</div>
+                    <div>级别：会员</div>
+                </div>
+                <div class="member-avatar"><img src="{$userinfo.headimgurl}" alt=""></div>
+            </div>
+            <div class="section-box-white section-padded">
+                可用金额：¥ {$userinfo.user_money}
+            </div>
+        </section>
+        <section class="member-options">
+            <div class="mui-card">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <a href="spokes" class="mui-navigate-right">
+                            <i class="user-icon-pinpaituan"></i> 代言人推广
+                        </a>
+                    </li>
+                 <!-- 
+                 <li class="mui-table-view-cell">
+                        <a href="member_info" class="mui-navigate-right">
+                            <i class="user-icon-gerenxinxi"></i> 用户信息
+                        </a>
+                    </li>
+                  -->   
+                    <li class="mui-table-view-cell">
+                        <a href="orders" class="mui-navigate-right">
+                            <i class="user-icon-dingdan"></i> 我的订单
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a href="cards" class="mui-navigate-right">
+                            <i class="user-icon-zhichishuaqia"></i> 银行卡
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a href="record" class="mui-navigate-right">
+                            <i class="user-icon-dianzipingzheng"></i> 提现记录
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a href="account_log" class="mui-navigate-right">
+                            <i class="user-icon-dianzipingzheng"></i> 账户变动记录
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </section>
+    <div style="width:100%; height:60px; display:block;"></div>
+    <script type="text/javascript">var navid =2;</script>
+    <include file="Public/foot" />
+</body>
+</html>

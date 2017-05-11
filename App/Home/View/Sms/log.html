@@ -1,0 +1,57 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="__URL__" method="post">
+        <input type="hidden" name="pageSize" value="{$numPerPage}">
+        <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+
+        <div class="bjui-searchBar">
+            <label>手机号码：</label>
+            <input type="text" value="{$_REQUEST['keys']}" name="keys" class="form-control" size="20" />
+
+            <select name="prize" id="prize" data-toggle="selectpicker">
+                <option value='0'> 发送状态 </option>
+                <option value='Success'> 成功 </option>
+                <option value='Faild'> 失败 </option>
+            </select>
+
+            <button type="submit"  class="btn-default" data-icon="search">查询</button>
+            <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">清空查询</a>
+        </div>
+    </form>
+
+</div>
+<div class="bjui-pageContent tableContent">
+    <table class="table table-bordered table-hover table-striped table-top" data-selected-multi="true" data-toggle="tablefixed">
+        <thead>
+            <tr>
+                <th width="60" height="30" align="center">编号</th>
+                <th align="center">短信类别</th>
+                <th align="center">手机号码</th>
+                <th align="center">短信内容</th>
+                <th align="center">发送状态</th>
+                <th align="center">状态说明</th>
+                <th align="center">发送时间</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist id="vo" name="list">
+                <tr data-id="{$vo['id']}">
+                    <td align="center">{$vo['id']}</td>
+                    <td align="center">{$vo['type']}</td>
+                    <td align="center">{$vo['phone']}</td>
+                    <td align="center">{$vo['content']}</td>
+                    <td align="center">{$vo['status']}</td>
+                    <td align="center">{$vo['message']}</td>
+                    <td align="center">{$vo['addtime']}</td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+</div>
+
+<div class="bjui-pageFooter">
+    <div class="pages">
+        <span>共 {$totalCount} 条  每页 {$numPerPage} 条</span>
+    </div>
+    <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$currentPage}">
+    </div>
+</div>

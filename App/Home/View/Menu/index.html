@@ -1,0 +1,69 @@
+<div class="bjui-pageHeader">
+    <form id="pagerForm" data-toggle="ajaxsearch" action="__URL__" method="post">
+        <input type="hidden" name="pageSize" value="{$numPerPage}">
+        <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+
+        <div class="bjui-searchBar">
+            <span>
+                <a class="btn btn-orange" href="javascript:;" onclick="$(this).navtab('reloadForm', true);" data-icon="undo">刷新</a>
+            </span>
+
+            <div class="pull-right">
+                <span <php>echo display(CONTROLLER_NAME.'/add');</php> >
+                    <a href="__URL__/add/navTabId/{:CONTROLLER_NAME}" class="btn btn-green" data-toggle="dialog" data-width="600" data-height="210" data-id="dialog-mask" data-mask="true" data-icon="plus">添加菜单</a>
+                </span>
+            </div>
+        </div> 
+    </form>
+
+</div>
+<div class="bjui-pageContent tableContent">
+    <table class="table table-bordered table-hover table-striped table-top" data-selected-multi="true">
+        <thead>
+            <tr>
+            <th height="30" width="60" align="center">编号</th>
+                <th>菜单名称</th>
+                <th align="center" width="60">排序</th>
+                <th>链接网址</th>
+                <th align="center" width="60" <php> echo display(CONTROLLER_NAME.'/del');</php> >状态</th>
+                <th width="100" align="center" <php>echo display(CONTROLLER_NAME.'/edit');</php> >操作</th> 
+            </tr>
+        </thead>
+        <tbody>
+            <foreach name="list" item="v">
+                <tr>
+                    <td height="25" align="center">{$v.id}</td>
+                    <td>
+                        <switch name="v.level">
+                            <case value="0"><b>{$v.catename}</b></case> 
+                            <case value="1">　{$v.catename}</case>
+                            <case value="2">　　{$v.catename}</case>
+                            <case value="3">　　　{$v.catename}</case>
+                            <default />
+                        </switch>
+                    </td>
+                    <td align="center">{$v.sort}</td>
+                    <td>{$v.alink}</td>
+                    <td align="center" <php>echo display(CONTROLLER_NAME.'/del');</php> >
+                        <a href="__URL__/status/id/{$v['id']}/navTabId/{:CONTROLLER_NAME}" data-toggle="doajax" data-confirm-msg="确定要操作吗？">
+                            <if condition="$v.status EQ 1 ">
+                                <img src="__PUBLIC__/images/ok.gif" border="0"/>
+                                <else/>
+                                <img src="__PUBLIC__/images/locked.gif" border="0"/>
+                            </if>
+                        </a>
+                    </td>
+                    <td > 
+                        <span <php>echo display(CONTROLLER_NAME.'/edit');</php>>
+                            <a href="__URL__/edit/id/{$v['id']}/navTabId/{:CONTROLLER_NAME}" class="btn btn-green btn-sm" data-toggle="dialog" data-width="600" data-height="210" data-id="dialog-mask" data-mask="true" >编辑</a>
+                        </span>
+
+                        <span <php>echo display(CONTROLLER_NAME.'/del');</php>>
+                            <a href="__URL__/del/id/{$v['id']}/navTabId/{:CONTROLLER_NAME}" class="btn btn-red btn-sm" data-toggle="doajax" data-confirm-msg="确定要删除吗？">删除</a>
+                        </span>
+                    </td>
+                </tr>
+            </foreach>
+        </tbody>
+    </table>
+</div>

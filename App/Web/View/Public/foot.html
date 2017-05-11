@@ -1,0 +1,64 @@
+<footer class="navigation">
+	<div class="nav-group">
+		<a href="/index.php" class="active"><i class="user-icon-shouye"></i><span>首页</span></a>
+		<a href="/index.php/user/qrcode"><i class="user-icon-kongjianxiu"></i><span>秀一秀</span></a>
+		<a href="/index.php/user/member"><i class="user-icon-30"></i><span>我</span></li></a>
+		<a href="/index.php/help"><i class="user-icon-weibiaoti1"></i><span>帮助</span></a>
+	</div>
+</footer>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="http://cdn.bootcss.com/zepto/1.1.6/zepto.min.js"></script>
+<script src="http://oss.llian.com.cn/js/mui.min.js"></script>
+<script src="http://oss.llian.com.cn/js/common.js"></script>
+<script type="text/javascript">
+	<eq name="is_wechat_browser" value="1">
+		$('.page-header').hide();
+		$('.container').css("padding-top","0rem");
+	</eq>
+	$('.nav-group a').removeClass('active');
+	$('.nav-group a').eq(navid).addClass('active');
+
+	Zepto(function($){
+		$("#loading").hide();
+	})
+</script>
+
+<script>
+	wx.config({
+		appId: '{$signPackage.appId}',
+		timestamp: {$signPackage.timestamp},
+		nonceStr: '{$signPackage.nonceStr}',
+		signature: '{$signPackage.signature}',
+		jsApiList: [
+		'checkJsApi',
+		'onMenuShareTimeline',
+		'onMenuShareAppMessage',
+		'onMenuShareQQ',
+		'onMenuShareWeibo'
+		]
+	});             
+	wx.ready(function () {
+		wx.checkJsApi({
+			jsApiList: [
+			'getNetworkType',
+			'previewImage',
+			'onMenuShareTimeline',
+			'onMenuShareAppMessage',
+			'onMenuShareQQ',
+			'onMenuShareWeibo'
+			],            
+		});
+
+		var shareData = {
+			title: '我为流联代言',
+			desc: '联合百万用户为你的流量省钱！我们提供中国移动，中国联通，中国电信三大运营商2/3/4G手机流量充值服务。充值优惠、快速，同时提供向个人用户流量代理分销业务，让您躺着都能赚钱！',
+			link: 'http://m.llian.com.cn/index.php/user/qrcode/user_id/{$user_id}',
+			imgUrl: 'http://m.llian.com.cn/WeChat/logo01.png', 
+		};
+		wx.onMenuShareAppMessage(shareData);
+		wx.onMenuShareTimeline(shareData);
+		wx.onMenuShareQQ(shareData);
+		wx.onMenuShareWeibo(shareData);
+	});
+</script>

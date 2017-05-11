@@ -1,0 +1,143 @@
+<include file="Public/head" />
+
+<body>
+    <style type="text/css">
+        body{background:url(__PUBLIC__/Amazeui/i/sign_bg.gif);}
+        .sign_div{ position: absolute; top: 0px; left: 0px; background: #000; opacity: 0.6; width: 100%; height: 100%; z-index: -1; }
+        .sign_btn{ width: 200px; height: 200px; padding: 35px 30px 20px 30px; margin:40px auto; color: #fff; background: #cc0228; border:7px solid #920E0E; border-radius: 50%; font-size: 4rem; position: relative; text-align: center;-moz-box-shadow:2px 2px 5px #333333; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333;-moz-text-shadow:2px 2px 5px #333333; -webkit-text-shadow:2px 2px 5px #333333; text-shadow:2px 2px 5px #333333; }
+        .sign_btn span{font-size: 1.3rem; position: absolute; left: 30px;}
+        .sign_btn hr{ margin: 8px 0px; -webkit-box-shadow:2px 2px 5px #333333; box-shadow:2px 2px 5px #333333;}
+        .layermanim .layermend:before, .layermanim .layermend:after{background-color: #fff;}
+        .layermanim h3{}
+    </style>
+
+    <header data-am-widget="header" class="am-header am-header-default"  data-am-sticky="{animation: 'slide-top'}" style="z-index: 9;">
+        <div class="am-header-left am-header-nav">
+            <a href="/index.php/" class="">
+                <i class="am-header-icon am-icon-chevron-left"></i>
+            </a>
+        </div>
+        <h1 class="am-header-title">{$page_title}</h1>
+
+    </header>
+
+    <!--内容显示-->
+    <div class="sign_div"></div>
+
+    <div class="sign_btn">
+        <a style="color:#fff;" class="sign_btn_a">{$sign_text}</a>
+        <hr>
+        <span>每日签到, 积分享好礼</span>
+    </div>
+
+    <div class="am-container">
+        <div class="am-g">
+            <ul class="am-list am-list-static am-list-border am-list-striped" style=" margin-bottom: 0rem; min-height:10px;">
+                <li style="background: #cc0228; color:#fff;">
+                    我的积分: {$point|default=0}
+                </li>
+                <volist name="list" id="list">
+                    <li>
+                        <div class="am-cf">
+                            <span class=" am-fl am-text-sm">{$list.adddate}</span>
+                            <span class="am-fr">
+                                {$list.content}
+                            </span>
+                        </div>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </div>
+
+    <div class="am-hide">
+        <div id="login_html">
+            <form class="am-form">
+              <fieldset >
+                <div class="am-form-group" style="text-align:left;">
+                    <label for="doc-ds-ipt-1">请输入您的手机号</label>
+                    <input type="text" id="user_phone" class="am-form-field" placeholder="请输入您的手机号" value="">
+                </div>
+
+                <div class="am-form-group" style="text-align:left;">
+                    <label for="oc-ds-select-1">请输入验证码</label>
+                    <div class="am-cf"></div>
+                    <input type="text" id="verifcode" class="am-form-field" placeholder="请输入验证码" value="" style="width:50%; float:left;">
+                    <button type="button" class="am-btn am-btn-default" style="width:50%; float:left;" onclick="sendsms('sendagain');" id="sendagain">发送验证码</button>
+                </div>
+
+                <div class="am-cf">
+                    <button type="submit" class="am-btn am-btn-danger am-radius am-btn-block am-margin-top">登陆</button>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!--内容显示-->
+
+<include file="Public/foot" />
+<if condition="$today_signed neq '1'">
+    <script type="text/javascript">
+        $(".sign_btn_a").click(function(){
+            $(".sign_btn").html('签到中<hr><span>每日签到, 积分享好礼</span>');
+            $.ajax({
+                type: "get",
+                url: "/index.php/user/sign/act/sign/id/{$user_id}",
+                timeout: 20000,
+                error: function(){ alert("签到失败,请联系管理员处理") },
+                success: function(t){
+                    $(".sign_btn").html('已签到<hr><span>每日签到, 积分享好礼</span>');
+                    window.location.reload(true);
+                }
+            });
+        })
+    </script>
+</if>
+
+<if condition="$needlogin eq '1'">
+    <script type="text/javascript">
+        $(".sign_btn_a").click(function(){
+            window.location.href='/index.php/user/login';
+        })
+
+        function sendsms(obj){
+            var tel = $("#user_phone").val();
+            console.log(tel);
+            if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(tel))){ 
+                alert("手机号码填写不正常，请检查"); 
+                return false; 
+            } 
+            settime(obj);
+            $.ajax({
+                type: "get",
+                cache:false,
+                url: "/index.php/sms/sendverifsms/RecNum/"+tel,
+                timeout: 20000,
+                error: function(){ alert("出错了, 请联系管理员处理")},
+                success: function(t){
+                    $('#msg').html(t);
+                }
+            });
+        }
+
+        var countdown=60; 
+        function settime(obj) { 
+            if (countdown == 0) {
+                $("#"+obj).attr('disabled',false);
+                $("#"+obj).html("重新发送");
+                countdown = 60; 
+                return;
+            } else { 
+                $("#"+obj).attr('disabled',true);
+                $("#"+obj).html("重新发送(" + countdown + ")");
+                countdown--; 
+            } 
+            setTimeout(function() { 
+                settime(obj) }
+                ,1000) 
+        }
+    </script>
+</if>
+

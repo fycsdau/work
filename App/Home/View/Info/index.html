@@ -1,0 +1,88 @@
+<div class="bjui-pageHeader">
+  <form id="pagerForm" data-toggle="ajaxsearch" action="__URL__" method="post">
+    <input type="hidden" name="pageSize" value="{$numPerPage}">
+    <input type="hidden" name="pageCurrent" value="{$_REQUEST['pageNum']|default=1}">
+
+    <div class="bjui-searchBar">
+      <input type="hidden" name="type" value="{$_REQUEST['type']}">
+      <label>标题：</label>
+      <input type="text" value="{$_REQUEST['title']}" name="title" class="form-control" size="15" />
+      <button type="submit"  class="btn-default" data-icon="search">查询</button>
+
+      <div class="pull-right">
+        <span <php>echo display(CONTROLLER_NAME.'/add');</php> >
+          <a href="__URL__/add/type/{$infotypeid}/navTabId/{:CONTROLLER_NAME}" class="btn btn-green" data-toggle="dialog" data-width="670" data-height="430" data-id="dialog-mask" data-mask="true" data-maxable="false" data-icon="plus">添加{$infotypename}</a>
+        </span>
+      </div>
+    </div> 
+  </form>
+</div>
+
+<div class="bjui-pageContent tableContent">
+  <table class="table table-bordered table-hover table-striped table-top" data-selected-multi="true" data-toggle="tablefixed">
+    <thead>
+      <tr>
+        <th width="50" height="30" align="center" data-order-direction='desc' data-order-field='id'>ID</th>
+        <th align="center">标题</th>
+        <th width="100" data-order-direction='desc' data-order-field='uname' align="center">添加人</th>
+        <th width="100" data-order-direction='desc' data-order-field='addtime' align="center">添加时间</th>
+        <if condition="$infotypeid EQ '2'">
+          <th width="120" align="center">审核状态</th>
+        </if>
+        <th width="120" align="center">操作</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <volist id="v" name="list">
+        <tr>
+          <td align="center">{$v.id}</td>
+          <td>
+            <a href="__URL__/view/id/{$v['id']}"  data-toggle="dialog" data-width="670" data-height="430" data-id="dialog-mask" data-mask="true" >
+              {$v.title|msubstr=###,0,20}
+            </a>
+          </td>
+          <td>{$v.uname}</td>
+          <td>{$v.addtime|substr=###,0,10}</td>
+          <if condition="($infotypeid EQ '2')">
+            <td>
+              <if condition="($info_status_change eq '1') ">
+                <a href="__URL__/status/id/{$v['id']}/navTabId/org_point" data-toggle="doajax" data-confirm-msg="确定要切换状态吗？">
+                  <if condition="$v.status EQ 1 ">
+                    <font color="green">已审核</font>
+                    <else/>
+                    <font color="red">未审核</font>
+                  </if>
+                </a>
+                <else/>
+                <if condition="$v.status EQ 1 ">
+                  <font color="green">已审核</font>
+                  <else/>
+                  <font color="red">未审核</font>
+                </if>
+              </if>
+            </td>
+          </if>
+          <td>
+            <span <php>echo display(CONTROLLER_NAME.'/edit');</php>>
+              <a href="__URL__/edit/id/{$v['id']}/navTabId/{:CONTROLLER_NAME}" class="btn btn-green btn-sm" data-toggle="dialog" data-width="670" data-height="430" data-id="dialog-mask" data-maxable="false" data-mask="true" >编辑</a>
+            </span>
+
+            <span <php>echo display(CONTROLLER_NAME.'/del');</php>>
+              <a href="__URL__/del/id/{$v['id']}/navTabId/{:CONTROLLER_NAME}" class="btn btn-red btn-sm" data-toggle="doajax" data-confirm-msg="确定要删除吗？">删除</a>
+            </span>
+          </td>
+        </td>
+      </tr> 
+    </volist>
+  </tbody>
+</table>
+</div>
+
+<div class="bjui-pageFooter">
+  <div class="pages">
+    <span>共 {$totalCount} 条  每页 {$numPerPage} 条</span>
+  </div>
+  <div class="pagination-box" data-toggle="pagination" data-total="{$totalCount}" data-page-size="{$numPerPage}" data-page-current="{$currentPage}">
+  </div>
+</div>

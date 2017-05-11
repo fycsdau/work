@@ -1,0 +1,103 @@
+<div class="bjui-pageHeader" style="padding:10px 10px;">
+  <label>短信接口参数配置</label>
+  <div class="pull-right">
+    <span >
+    </span>
+  </div>
+</div>
+
+<div class="bjui-pageContent">
+  <form action="__URL__/savecongfig/navTabId/{:CONTROLLER_NAME}" class="pageForm" data-toggle="validate">
+    <input type="hidden" name="id" value="{$id}">
+    <div class="pageFormContent" data-layout-h="0">
+      <table class="table table-condensed table-hover" width="100%">
+        <tbody>
+          <tr>
+            <td width="120" align="right">
+              <label for='apiurl' class='control-label x185'>接口地址:</label>
+            </td>
+            <td>
+              <input type='text' id='apiurl' name='apiurl' data-rule='required;' size='30' value="{$config.apiurl}" >
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='userid' class='control-label x185'>企业ID:</label>
+            </td>
+            <td>
+              <input type='text' id='userid' name='userid' data-rule='required;' size='30' value="{$config.userid}" >
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='username' class='control-label x185'>用户帐号:</label>
+            </td>
+            <td>
+              <input type='text' id='username' name='username' data-rule='required;' size='30' value="{$config.username}">
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='password' class='control-label x185'>用户密码:</label>
+            </td>
+            <td>
+              <input type='password' id='password' name='password' data-rule='required;' size='30' value="{$config.password}">
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='smstitle' class='control-label x185'>短信标头:</label>
+            </td>
+            <td>
+              <input type='text' id='smstitle' name='smstitle' data-rule='required;' size='30' value="{$config.smstitle}">
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='verifitext' class='control-label x185'>验证码短信模板:</label>
+            </td>
+            <td>
+              <textarea id='verifitext' name='verifitext' data-rule='required;' cols="30" rows="=50">{$config.verifitext}</textarea>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td id="txtsum">当前已输入 1 字，以 1 条短信发送。</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </form>
+</div>
+
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+  </ul>
+</div>
+
+<script type="text/javascript"> 
+  $(document).ready(function() { 
+    textsum_check();
+  }); 
+
+  $(document).keyup(function() { 
+    textsum_check();
+  }); 
+
+  function textsum_check(){
+    var smstitle = $("#smstitle").val().length; 
+    var text = $("#verifitext").val(); 
+    var counter = text.length; 
+    var counters = Math.ceil(counter / (70-smstitle));
+    $("#txtsum").text("当前已输入 "+ counter +" 字，以 "+ counters +" 条短信发送。");
+  }
+</script>

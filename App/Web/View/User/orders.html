@@ -1,0 +1,52 @@
+<include file="Public/head" />
+<style>
+<!--
+div.meneame{padding:3px;margin:3px;color:#DDE2E7;text-align:center;}
+div.meneame a{border:#C8C7CC 1px solid;padding:7px 10px;background-position:50% bottom;background-image:url(../images/meneame.jpg);text-decoration:none;border-radius:5px}
+div.meneame a:hover{border:#DDE2E7 1px solid;background-image:none;background-color:#DDE2E7;border-radius:8px}
+div.meneame a:active{color:#777;background-color:#fff;border:1px solid #ddd;opacity:.6}
+div.meneame span.current{border:#333 1px solid;padding:7px 10px;font-weight:bold;color:#333;background-color:#DDE2E7;border-radius:5px}
+div.meneame span.disabled{border:#ffe3c6 1px solid;padding:7px 10px;color:#ffe3c6;border-radius:5px}
+-->
+</style>
+<body>
+    <header class="page-header">
+        <i class="header-left icon-func user-icon-fanhui"></i>
+        <div class="header-title">我的订单</div>
+    </header>
+    <section class="container">
+        <section class="orders">
+
+            <volist id="v" name="order">
+                <div class="mui-card">
+                    <ul class="mui-table-view">
+                        <li class="mui-table-view-cell">
+                            <div class="section-box orders-item-header">
+                                <div class="section-box-item">订单状态：{$v['statusname']}</div>
+                                <div class="section-box-item orders-date">{$v['create_time']}</div>
+                            </div>
+                            <a href="/index.php/user/order_detail/id/{$v['order_id']}" class="mui-navigate-right">
+                                <div class="section-box orders-info">
+                                    <div class="orders-logo"><i class="{$v['operate_class']}"></i></div>
+                                    <div class="section-box-item orders-info-txt">
+                                        <div>订单编号：<span>{$v['order_sn']}</span></div>
+                                        <div>订单金额：<span>{$v['order_money']}</span></div>
+                                        <div>手机号码：<span>{$v['phone']}</span></div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </volist>
+        </section>
+		<div class=meneame>{$page}</div>
+    <div style="width:100%; height:60px; display:block;"></div>
+    </section>
+    <script type="text/javascript">
+    	var navid =2;
+    	
+    </script>
+    <include file="Public/foot" />
+</body>
+</html>

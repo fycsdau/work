@@ -1,0 +1,89 @@
+<div class="bjui-pageContent">
+  <form action="__URL__/add/navTabId/prize" class="pageForm" data-toggle="validate">
+    <input type="hidden" name="id" value="{$id}"><input type="hidden" name="type" value="{$type}">
+    <div class="pageFormContent" data-layout-h="0">
+      <table class="table table-condensed table-hover" width="100%">
+        <tbody>
+          <tr>
+            <td width="15%" align="right">
+              <label for='title' class='control-label'>奖品名称:</label>
+            </td>
+            <td width="30%">
+              <input type='text' id='title' name='title' data-rule='required;' size='20' placeholder="">
+            </td>
+            <td width="15%" align="right">
+              <label for='person' class='control-label'>奖品分类:</label>
+            </td>
+            <td width="40%">
+              <select name="type" id="type" data-toggle="selectpicker">
+                <volist name="type" id="item">
+                  <option value="{$item.id}" >{$item.title}</option>
+                </volist>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='nums' class='control-label'>奖品数量:</label>
+            </td>
+            <td >
+              <input type='text' id='nums' name='nums' data-rule='required;' size='20' placeholder="">
+            </td>
+            <td align="right">
+              <label for='price' class='control-label'>奖品价值:</label>
+            </td>
+            <td >
+              <input type='text' id='price' name='price' data-rule='required;' size='13' placeholder="">
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='picurl' class='control-label'>奖品图片:</label>
+            </td>
+            <td colspan="3">
+              <input type='text' id='picurl' name='picurl' data-rule='required;' size='30' placeholder="">
+
+              <a class="btn btn-default" id="thumbnail_btn">上传图片</a>
+
+            </td>
+          </tr>
+          <tr>
+            <td align="right">
+              <label for='nums' class='control-label'>奖品介绍:</label>
+            </td>
+            <td colspan="3"></td>
+          </tr>
+          <tr>
+            <td colspan="4">
+              <textarea name='value' data-toggle='kindeditor' data-minheight='150' data-width='500' data-items='fontname, fontsize, |, forecolor, hilitecolor, bold, italic, underline, removeformat, |, justifyleft, justifycenter, justifyright, insertorderedlist, insertunorderedlist, |, emoticons, image, link'></textarea>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </form>
+</div>
+
+<div class="bjui-pageFooter">
+  <ul>
+    <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+    <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+  </ul>
+</div>
+
+<script type="text/javascript">
+  var editor = KindEditor.editor({
+    allowFileManager : true
+  });
+  KindEditor('#thumbnail_btn').click(function() {
+    editor.loadPlugin('image', function() {
+      editor.plugin.imageDialog({
+        imageUrl : KindEditor('#url1').val(),
+        clickFn : function(url, title, width, height, border, align) {
+          KindEditor('#picurl').val(url);
+          editor.hideDialog();
+        }
+      });
+    });
+  });
+</script>
